@@ -62,7 +62,27 @@ CSS代码写的位置：
 
 常用的CSS处理器：less、sass、stylus
 
+图的标注：PS，像素大厨
 
+对于字体的设置，是有继承性，也就是你对父标签设置了字体，那么子标签，也是继承这个属性。
+对于继承生，a标签比较特殊，如果你要设置a标签的颜色，那么你需要定位到a标签。
+
+快速格式化代码：alt+shift+f
+
+总结：
+    color：设置字体的颜色
+    font-size：设置字体的大小
+    font-weight：设置字体的粗细
+    font-style：设置字体的是否倾斜
+    font-family:设置什么类型的字体
+    font:前面几个属性的复合属性
+    -------------
+    text-decoration:修饰钱
+    text-indent:首行空两格
+    text-align:文本的对齐方式
+    line-height:行高
+
+    上面的属性是具有继承性的。
 
 
 
