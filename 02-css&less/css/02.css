@@ -1,0 +1,41 @@
+/* id选择器 */
+#box{
+    color: red;
+}
+
+div{
+    /* 某些属性有继承性，给父标签设置了，子标签也会起作用 */
+    color: gold;
+}
+/* 后代选择吕 */
+div span{
+    /* 后面的css属性会把前面的css属性给覆盖掉 */
+    color: skyblue;
+}
+
+/* class选择器 */
+.item{
+    color: pink;
+}
+/* id选择器表示唯一，只能有一个，class可以有多个 */
+
+li{
+    /* 后面的css属性会把前面的css属性给覆盖掉 */
+    color: aqua;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
