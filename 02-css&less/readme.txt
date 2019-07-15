@@ -114,11 +114,96 @@ CSS代码写的位置：
 
     任务：消化，像素大厨
 
+CSS调试面板：
+    查看样式：样式分成了好几块
+        第一块：不用管
+        第二块：针对div写的独有样式，可以通过打勾与否让写是否起作用
+        第三块：user agent stylesheet  标签的默认样式
+        第四块：inherited from xx  继承的属性 
+        在查看面板中，如果一个属性上面有个删除线，表示这个属性不起作用
+    
+    修改样式（临时性）：
+        数值值是数字
+        颜色：单词，颜色面板，十六进制
+        字符串
+    
+    让某个样式是否起作用
+        打勾
+        我们自己写的样式的优先级是高于继承过来的样式的
 
+选择器（60多个）：
+    p 
+    class 
+    id 
+    div p 
+    h1,h2 
+    :hover 暂时就在a标签上使用  当鼠标放上去的时候选中
+    *  选中所有的标签   *{margin:0; padding:0;}
+    div.box  交集选择器
 
+选择器优先级（层叠性）：
+    1： 自已写的 > 继承过来的
+    2： 行内 > 内部    行内 > 外部   内部和外部的优先级一样（就近原则，内部和外部的选择器是一样的）
+        行内 > 内部=外部（就近原则，选择器要一致）> 默认的
+    3： ID > class > div 
+    4： 权重  ID：0100    class: 0010    div: 0001  哪个钱多就用哪个
+    5:  important 
 
+CSS的两大特性：层叠性，继承性
 
+有些标签有默认的样式，这些样式很多我们不需要，我们需要给它重置，一般叫reset，网上有
+很多的reset.css。
 
+有些常用的样式，我们会写到commont.css中，用的时候，直接使用commont.css中的类就OK了。
 
+盒子模型(布局，美化)：  
+    六大属性来调整盒子模型
+
+margin:盒子与盒子之间的距离  分上，下，左，右四个方向的margin
+    1个值  2个值  3个值  4个值
+    有些标签有默认的margin   *{margin:0}   *可以有人不会用  
+    margin-top   margin-right  margin-bottom  margin-left 
+    应用：*{margin:0}   水平居中  网站顶部背景100%宽  版心最新版居中
+
+border:设置盒子的边框  
+    border:粗细 线型 颜色   border:1px solid red;
+    border-top   border-right  border-bottom   border-left  
+    border-width   border-style   border-color
+    border-top-width  xxx  
+    border在页面是占空间的
+
+padding:
+    内边距，补白   内容与border之间的距离
+    有些标签有默认的padding   *{padding:0;}
+    1个值  2个值  3个值  4个值
+    应用：调整内容与border之间的间隙  
+    padding在页面是占空间的
+
+content:　内容的宽度和高度
+    width:
+    height：
+    男标签可以设置宽度和高度，女标签不能设置宽度和高度
+    女标签它的宽度由内容决定，高度由font-size决定 
+    width和height可以设置百分比，是父元素的百分比。
+
+background:
+    background-color:
+    background-image:
+
+流式布局（标准文档流）：默认布局方案  不给力
+    从上向下，从左到右进行布局
+    男盒子独占一行，女盒子并排显示，女盒如果一行撑满了，自动换行。
+    国家：规定
+
+浮动布局：让男标签可以并排显示
+    如果一个元素浮动了，就相当于这个元素出国，对就产生很我影响
+    影响1：元素出国了，父元素里面就相当于没有内容，它的高度就变成0了，也就父元素高度塌陷了。元素浮动会造成父元素的高度塌陷。
+           可以清楚这个影响：overflow:hidden;  overflow本意就是处理溢出，我们可以使用overflow的这个小偏方，消除父元素的塌陷。
+    如果一个元素浮动了，那么这个元素内部还是按流式布局进行布局（内部也是一个标准文档流）。
+
+小间隙有如下几种处理办法：
+    1，加margin-left  可以给里面的li加，也可以给nav加
+    2，加空格  &nbsp;
+    3，加padding 可以给nav加  能不能给li加padding　？　
 
 

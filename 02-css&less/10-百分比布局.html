@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .item{
+            /* 让男标签也可以并排显示  浮动：让男标签可以并排显示 */
+            float: left;
+            width: 24%;  /*  960/4 = 240  */
+            border: 1px solid green;  /* 8px */
+        }
+        .item h2{
+            border: 1px solid red;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="width: 960px;margin:50px auto; border: 2px solid red; overflow: hidden;">
+        <div class="item">
+            <h2>item1</h2>
+        </div>
+        <div class="item">
+            <h2>item2</h2>
+        </div>
+        <div class="item">
+            <h2>item3</h2>
+        </div>
+        <div class="item">
+            <h2>item4</h2>
+        </div>
+    </div>
+</body>
+
+</html>
