@@ -164,6 +164,20 @@ margin:盒子与盒子之间的距离  分上，下，左，右四个方向的ma
     有些标签有默认的margin   *{margin:0}   *可以有人不会用  
     margin-top   margin-right  margin-bottom  margin-left 
     应用：*{margin:0}   水平居中  网站顶部背景100%宽  版心最新版居中
+    margin对于男标签在四个方向上都有作用，对于女标签，只在水平方向上有效，在垂直方向上无效
+    margin重叠（塌陷）：
+        2个前提：男标签，垂直方向
+        兄弟元素之间的重叠：上面盒子的下margin和下面盒子的上margin重叠，中间的margin大小是取大优先
+            解决重叠：  
+                方法1：给男的变成不男不女的
+                方法2：浮动（浮动元素是不会塌陷的）
+        父子元素之间的重叠：父元素设置margin-top和父中第一个子元素设置的margin-top会重叠
+            解决重叠：
+                方法1：给父元素设置border-top   不想要边框，使用transparent
+                方法2：给父元素设置padding-top 
+                方法3：给男的变成不男不女的
+    margin可以设置负值：
+
 
 border:设置盒子的边框  
     border:粗细 线型 颜色   border:1px solid red;
@@ -171,6 +185,7 @@ border:设置盒子的边框
     border-width   border-style   border-color
     border-top-width  xxx  
     border在页面是占空间的
+    border可以实现小三角
 
 padding:
     内边距，补白   内容与border之间的距离
@@ -205,5 +220,9 @@ background:
     1，加margin-left  可以给里面的li加，也可以给nav加
     2，加空格  &nbsp;
     3，加padding 可以给nav加  能不能给li加padding　？　
+
+男标签特点：
+
+女标签特点：
 
 
