@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style>
+		body{
+			font:normal normal 16px/1.5 tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
+		}
+		ul{list-style: none; /*去掉ul标签前的黑点*/}
+		h1,h3,h4{font-weight: normal;}
+		a{text-decoration: none;color:#4d4d4d;}
+		body,ul,h1,h3,h4,p,dl,dd{margin:0;}  /*把元素的默认的margin去掉*/
+		ul{padding:0;}
+
+		em{font-style: normal;}
+		.w960{
+			margin-right: auto;
+			margin-left: auto;
+			width:960px;
+			/*background-color: yellow;*/
+		}
+		.mt32{margin-top: 32px;}
+		.fs30{font-size: 30px;}
+		.fl{float: left;}
+		.fr{float: right;}
+		.mr90{margin-right: 90px;}
+		.mr89{margin-right: 89px;}
+		.mb35{margin-bottom: 35px;}
+
+		/*.logo,.bigAdvImg,.business,.questionAndnews,.contact{background-color: #ccc;}*/
+
+		/******************************************logo 区域开始****************************/
+			.logo{
+				background-color: rgb(230,82,36);/*logo区域的背景颜色*/
+				height: 76px; /*108-32*/
+				padding-top:32px;
+			}
+			.logo ul{height:45px;}
+			.logo p{color:#fff;}
+			.logo em{color:#fff;}
+
+			.logo h1 a{
+				display: block;
+				width: 182px;height: 45px;
+				background: url(img/logo.png) no-repeat;
+				text-indent:-9999px;
+			}
+		/*****************************************logo 区域结束***********************/
+
+		/******************************************nav 区域开始****************************/
+			.nav{
+				height: 80px;
+				padding-left:15px;
+				width: 945px; /*960-15*/
+				/*background-color: #ccc;*/
+			}
+			.nav a{margin-right:50px;}
+			.nav .current{color:#e75225;}
+			.nav a:hover{color:#e75225;}
+		/*****************************************nav 区域结束***********************/
+
+		/*****************************************bigAdvImg 区域开始***********************/
+			.bigAdvImg{width: 960px;height:450px;background:url("img/bigAdvimg.png");}
+		/*****************************************bigAdvImg 区域结束***********************/
+
+		/*****************************************promise 区域开始***********************/
+			.promise{height: 82px;margin-top:42px;/*background-color:red;*/}
+			.promise div{float: left;width: 320px;}
+			.promise img{margin-right:16px;float: left;}
+			.promise dl{float: left;width: 188px;}
+			.promise dt{font-size:20px;font-weight: bold;}
+		/*****************************************promise 区域结束***********************/
+		
+		/*****************************************business 区域***********************/	
+			.business {margin-top:60px;}
+			.business h3{text-align: center;font-size: 30px;font-weight:bold;}
+			.business ul{height: 310px;margin-top:50px;}
+			.business ul li{float:left;width: 225px;/*background-color: blue;*/margin-right:20px;}
+			.business .last{margin-right:0;}
+			.business h4{color:#e75225;}
+			.business p{font-size: 14px;line-height: 2;}
+			.business a{display:block;text-align:center;background-color: #4b4b4b;color: #fff;width: 104px;line-height: 40px;margin-top:32px;}
+		/*****************************************business 区域结束***********************/
+		
+		/*****************************************about ***********************/
+		
+			.about{margin-top:70px;height: 192px;background-image: url("img/about.jpg");text-align: center;color:#fff;}
+			.about h4{padding-top:30px;}
+			.about p{
+				font-size:14px;width: 548px;margin:40px auto 0;line-height: 2;}
+			/*.about div{padding:0 200px;}*/
+		/*****************************************about 区域结束***********************/
+		
+		/*****************************************questionAndnews 区域结束***********************/
+			.questionAndnews{margin-top:60px;height: 420px;}
+			.questionAndnews h3{font-size: 24px;font-weight: bold;margin-bottom:10px;}
+			.questionAndnews li {font-size: 14px;}
+			.questionAndnews .news{width: 640px;}
+			.questionAndnews .news li{width: 295px; float: left;}
+			.questionAndnews .news p{
+				float: left;
+				width: 198px;
+				/*实现省略号的效果*/
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+			.questionAndnews .news span{float: right}
+			.questionAndnews .news .first{margin-right:28px;}
+			.questionAndnews .news a{line-height: 2.5;}
+			.questionAndnews .news a:hover{color:#e75225;}
+			.questionAndnews .question{width: 320px;}
+			.questionAndnews .question li{padding-bottom:20px;padding-top:15px;line-height:3;border-bottom:1px dashed #ccc;}
+			.questionAndnews .question .last{border-bottom:none;}
+			.questionAndnews .question .ask,.questionAndnews .question .answer{
+				line-height: 2;
+				background-repeat: no-repeat;
+				width: 240px;
+				padding-left:40px;
+				background-position: left center; /**/
+			}
+			.questionAndnews .question .ask{background-image: url("img/q(1).jpg");}
+			.questionAndnews .question .answer{background-image: url("img/q2.jpg");}
+		/*****************************************questionAndnews 区域结束***********************/
+
+			.cooperation {background-color:#f6f6f6;height: 328px;}
+			.jsjj,
+			.zyjj,
+			.zsyh,
+			.jxjj,
+			.hxjj,
+			.hftjj,
+			.nfjj,
+			.dfjj,
+			.hxjj,
+			.hajj{ background: url("img/index_sp.png") no-repeat;
+			display:block;width: 121px;height:36px;text-indent:-9999px; }
+
+			.zyjj{background-position: 0 -61px}
+/*			.zsyh{background-position: 0 -61px}
+			.jxjj{background-position: 0 -61px}
+			.hxjj{background-position: 0 -61px}
+			.hftjj{background-position: 0 -61px}
+			.nfjj{background-position: 0 -61px}
+			.dfjj{background-position: 0 -61px}
+			.hxjj{background-position: 0 -61px}
+			.hajj{background-position: 0 -61px}*/
+			.cooperation h3{padding-top:50px;font-size: 24px;margin-bottom:20px;}
+			.cooperation ul{height: 110px;}
+
+			.cooperation ul li{float: left;margin:20px 88px 20px 0;}
+			.cooperation ul .last{margin-right:0px;}
+
+		/*****************************************cooperation 区域结束***********************/
+
+		/*****************************************联系我们***********************/
+			.contact{
+				background-color:#2c2c2c;
+				height: 200px;
+				color:#A9a9a9;
+				padding-top: 55px;
+			}
+			.contact dl{float: left;}
+			.contact dl dt{font-size: 24px;}
+			.contact .last{float: right;}
+			.wb,.wx,.pg,.az{width: 40px;height: 40px;display: block;background:url("img/index_sp.png") no-repeat;text-indent: -9999px;float: left;margin:3px;}
+			.wb{background-position: -173px -7px;}
+			.wx{background-position: -230px -7px;}
+			.pg{background-position: -173px -7px;}
+			.az{background-position: -173px -7px;}
+		/*****************************************联系我们  结束***********************/
+		/*****************************************copyright  ***********************/
+			.copyright{
+				background-color:#2c2c2c;
+				height: 66px;
+				color:#A9a9a9;
+				border-top:1px solid #424242;
+				text-align: center;
+				line-height: 2;
+			}
+
+		/*****************************************copyright  结束***********************/
+	</style>
+</head>
+<body>
+
+	<div class="container">
+	<!-- 顶部的 logo 区域 -->
+		<div class="logo">
+			<ul class="w960">
+				<li class="fl">
+					<h1>
+						<a href="">
+							利牛网
+						</a>
+					</h1>
+				</li>
+
+				<li class="fr">
+					<img class="fl" src="img/phone.png" alt="电话">
+					<div class="fr">
+						<p>财富热线</p>
+						<em>1889888888</em>
+					</div>
+				</li>
+			</ul>
+				
+		</div>
+	<!-- 顶部的 logo 区域end -->
+	
+	<!-- 导航区域 -->
+		<div class="nav w960">
+			<div class="mt32">
+				<a href="" class="current">首页</a>
+				<a href="">关于利牛</a>
+				<a href="">行业资讯</a>
+				<a href="">主要业务</a>
+				<a href="">安全保障</a>
+			</div>
+		</div>
+	<!-- 导航区域 end -->
+
+
+	<!-- 大图广告 -->
+		<div class="bigAdvImg w960">
+			<div>
+				<h3>利牛金融</h3>
+				<p>你身边的理财专家......</p>
+			</div>
+		</div>
+	<!-- 大图广告 end-->
+	<!-- 三大保障 -->
+		<div class="promise w960" height="180" >
+			<div>
+				<img src="img/promise1.png" alt="">
+				<dl>
+					<dt>稳定高收益</dt>
+					<dd>40倍银行活期存款利息100元起投，交易0手续费</dd>
+				</dl>
+			</div>
+			<div>
+				<img src="img/promise2.png" alt="">
+				<dl>
+					<dt>稳定高收益</dt>
+					<dd>本息保障、风控审核贷后管理</dd>
+				</dl>
+			</div>
+			<div>
+				<img src="img/promise3.png" alt="">
+				<dl>
+					<dt style="">稳定高收益</dt>
+					<dd>24小时放宽，提前还款减免费用</dd>
+				</dl>
+			</div>
+		</div>
+	<!-- 三大保障 end -->	
+		<!-- 主要业务 -->
+		<div class="business w960">
+			<h3>主要业务/products services</h3>
+			<ul>
+				<li>
+					<img src="img/business1.png" alt="">
+					<h4>投资业务</h4>
+					<p>证券投资业务，指银行购买有价证券的活动。</p>
+					<a href="">立即咨询</a>
+				</li>
+				<li>
+					<img src="img/business2.png" alt="">
+					<h4>理财增值</h4>
+					<p>通过发行基金单位，集中投资者的资金，由基金管理人管理和运用资金。</p>
+					<a href="">立即咨询</a>
+				</li>
+				<li>
+					<img src="img/business3.png" alt="">
+					<h4>信托服务</h4>
+					<p>信托业务建立了以项目为中心，以风险贯穿其间的业务运作平台。</p>
+					<a href="">立即咨询</a>
+				</li>
+				<li class="last">
+					<img src="img/business4.png" alt="">
+					<h4>产品代理</h4>
+					<p>通过代理的形式，推广和买卖产品，是产品的一种交易和流通方式。</p>
+					<a href="">立即咨询</a>
+				</li>
+			</ul>
+		</div>
+		<!-- 关于我们 -->
+		<div class="about w960">
+			<div>
+				<h4>关于我们</h4>
+				<p>利牛金融有限公司是在1991年5月13日成立的艾宏保险公司的基础上组建而成的金融集团公司，总部设在上海，以“推动和实现可持续的价值增长”为经营理念。</p>
+			</div>
+		</div>
+		<!-- 新闻和常见的问题 -->
+
+		<div class="questionAndnews w960">
+			<div class="fl news">
+				<h3>新闻/news</h3>
+				<ul>
+					<li class="first">
+						<a href=""><img src="img/news1.jpg"  width="295" alt=""></a>
+						<ul>
+							<li><a href="">
+							<p>证监会：分级基金投资者门槛定为30万元证券类资产</p><span>2016-11-29</span></a></li>
+							<li><a href=""><p>两市震荡下行 次新股板块走势较分化</p>	<span>2016-11-29</span></a></li>
+							<li><a href=""><p>机场民航板块起飞 上海机场涨3.31%</p>	<span>2016-11-29</span></a></li>
+							<li><a href=""><p>人民币汇率有条件保持基本稳定</p>	<span>2016-11-29</span></a></li>
+						</ul>
+					</li>
+					<li>
+						<a href=""><img src="img/news2.jpg" width="295" alt=""></a>
+						<ul>
+							<li><a href=""><p>年关将至，4件大事发生将影响你我的生活！</p><span>2016-11-29</span></a></li>
+							<li><a href=""><p>投资理财5个地方该花的钱，你花了吗？</p><span>2016-11-29</span></a></li>
+							<li><a href=""><p>关于年终奖的这些秘密你都知道吗？</p><span>2016-11-29</span></a></li>
+							<li><a href=""><p>活用理财小公式 让财富轻松翻倍！</p><span>2016-11-29</span></a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="fr question">
+				<h3>常见问题/news</h3>
+				<ul>
+					<li>
+						<p class="ask">
+							个人征信记录要注重哪些?
+						</p>
+						<p class="answer">
+							个人信息：姓名、证件类型证件号码。
+						</p>
+					</li>
+					<li>
+						<p class="ask">银行理财产品该怎么选？</p>
+						<p class="answer">
+							在各大银行都推出琳琅满目的理财产品，我们该如何做选择呢。
+						</p>
+						
+					</li>
+					<li class="last">
+						<p class="ask">个人消费贷款如何办理？</p>
+						<p class="answer">个人消费贷款也叫做消费者贷款，是银行以消费者信用为基础。</p>
+					</li>
+				</ul>
+			</div>
+			
+		</div>
+		<!-- 合作机构 -->
+		<div class="cooperation">
+			<div class="w960">
+				<h3>合作机构</h3>
+				<ul>
+					<li><a class="jsjj" href="">jsjj</a></li>
+					<li><a class="zyjj" href="">zyjj</a></li>
+					<li><a class="zsyh" href="">zsyh</a></li>
+					<li><a class="jxjj" href="">jxjj</a></li>
+					<li class="last"><a class="hxjj" href="">hxjj</a></li>
+					<li><a class="hftjj" href="">hftjj</a></li>
+					<li><a class="nfjj" href="">nfjj</a></li>
+					<li><a class="dfjj" href="">dfjj</a></li>
+					<li><a class="hxjj" href="">hxjj</a></li>
+					<li class="last"><a class="hajj" href="">hajj</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- 联系我们 -->
+		<div class="contact">
+			<div class="w960">
+				<dl class="mr90">
+					<dt class="mb35">联系我们</dt>
+					<dd>地址：广州市海珠区苏州街18号F栋3单元3A02</dd>
+					<dd>邮编：510000</dd>
+					<dd>邮件：2383003879@qq.com</dd>
+				</dl>
+				<dl class="mr90">
+					<dt>客服热线</dt>
+					<dd class="fs30">1888888888</dd>
+					<dd>(工作时间:9:00-21:00 )</dd>
+					<dd>
+						<a href="" class="wb">微博</a>
+						<a href="" class="wx">微信</a>
+						<a href="" class="pg">苹果</a>
+						<a href="" class="az">安卓</a>
+					</dd>
+				</dl>
+
+				<dl>
+					<dt class="mb35">商家服务</dt>
+					<dd>商家入驻</dd>
+					<dd>培训中心</dd>
+					<dd>广告服务</dd>
+					<dd>服务市场</dd>
+				</dl>
+				<dl class="last">
+					<dt class="mb35">帮助信息</dt>
+					<dd>帮助中心</dd>
+					<dd>赎回投资</dd>
+					<dd>新手指引</dd>
+					<dd>安全保障</dd>
+				</dl>
+			</div>
+		</div>
+		<!-- 版权 -->
+		<div class="copyright">
+			<p>&copy;2016 利牛金融有限公司 版权所有</p>
+			<p>本站使用凡科建站搭建</p>
+		</div>
+	</div>
+	
+</body>
+</html>

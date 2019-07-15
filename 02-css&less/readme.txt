@@ -204,6 +204,15 @@ content:　内容的宽度和高度
 background:
     background-color:
     background-image:
+        1，默认水平和垂直方向都会平铺
+        2，如果空间不足，图片也会显示，只是显示不完整
+        3，url后面的路径引号可加可不加
+        4，背景图片默认会填充border,padding,content
+    background-repeat:
+    background-position:
+    background-attactment:
+
+
 
 流式布局（标准文档流）：默认布局方案  不给力
     从上向下，从左到右进行布局
@@ -221,8 +230,33 @@ background:
     2，加空格  &nbsp;
     3，加padding 可以给nav加  能不能给li加padding　？　
 
-男标签特点：
+display: 显示，展示
+    变性手术
+    display:block 让一个标签变成男标签（块级元素）
+    display:inline 让一个标签变成女标签（行内元素）
+    display:inline-block  让一个标签变成不男不女标签（行内块元素）
+    display:none  可以让一个元素不显示出来
 
-女标签特点：
+男标签：独占一行，可以设置宽度  男标签要想并排显示---->float
+女标签：并排显示，不可以设置宽度
+不男不女的标签：并排显示，可以设置宽度   img   input
+
+
+
+
+
+
+
+
+
+
+
+
+
+今天的作业：
+    1，盒子模型
+    2，浮动布局
+    3，实现利牛网中四大模块的并排显示
+
 
 

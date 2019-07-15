@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            background-image: url("./imgs/icon.png");
+            background-repeat: no-repeat;
+            border: 3px solid red;
+            margin: 10px auto;
+            /* background-position: center center; */
+            /* background-position: 10px 10px; */
+            background-position: 20% 20%;
+        }
+    </style>
+</head>
+<!-- 
+    再次回顾，在地址栏中输出一个url，到浏览器可以看到页面的流程：
+        1，输入url，请求服务器  http://127.0.0.1:5500/02-css&less/19-bgp.html
+        2，服务器返回19-bgp.html  
+        3，浏览器得到19-bgp.html文件后，发现这个文件中有好多img  src=""
+        4，那么它会发现二次请求
+
+    优化策略：
+        减少Http的请求次数
+
+    可以把100张小图，合并成一张大图，大图请求回来后，怎么得到里面的小图。
+    答：background-position
+
+    小图合大图，精灵图，雪碧图....
+
+ -->
+ <style>
+     img{
+         width: 100px;
+         height: 100px;
+     }
+ </style>
+<body>
+    <!-- <div class="box"></div> -->
+    <img src="./imgs/icon.png" alt="">
+    <img src="./imgs/icon.png" alt="">
+    <img src="./imgs/icon.png" alt="">
+    <img src="./imgs/icon.png" alt="">
+    <img src="./imgs/icon.png" alt="">
+    <img src="./imgs/icon.png" alt="">
+    <img src="./imgs/icon.png" alt="">
+</body>
+
+</html>

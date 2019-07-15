@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+    </style>
+    <!-- 使用行内块使用利牛中四大模块并排显示的问题：
+        1，里面有文字的话，默认是基线对象 解决：vertical-align: top;
+        2，每个盒子之间有间隙，原因是换行导致 解决：外面div  style="font-size: 0"
+    -->
+    <style>
+        div{
+            display: inline-block;
+            /* 为了兼容ie6 */
+            *display:inline;
+            *zoom:1
+        }
+    </style>
+</head>
+<body>
+    <div style="font-size: 0">
+        <div style="font-size:16px; vertical-align: top;width: 100px;height: 200px;border:1px solid red; display:inline-block;">学习css</div>
+        <div style="font-size:16px; vertical-align: top;width: 100px;height: 200px;border:1px solid red; display:inline-block;">学习css学习css学习css学习css</div>
+        <div style="font-size:16px; vertical-align: top;width: 100px;height: 200px;border:1px solid red; display:inline-block;">学习css</div>
+    </div>
+</body>
+</html>
