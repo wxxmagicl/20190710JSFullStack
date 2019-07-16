@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .father{
+            width: 500px;
+            height: 500px;
+            /* overflow: hidden; 作用1：清除浮动  作用2：超出部分隐藏 */
+            /* overflow: hidden; */
+            border: 2px solid red;
+        }
+        .son1{
+            width: 200px;
+            height: 300px;
+            background-color: gold;
+            float: left;
+        }
+        .son2{
+            width: 100px;
+            height: 200px;
+            background-color: skyblue;
+            float: left;
+        }
+        .son3{
+            width: 160px;
+            height: 100px;
+            background-color: pink;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son1">老大</div>
+        <div class="son2">老二</div>
+        <div class="son3">老三</div>
+    </div>
+    <!-- <div style="width: 150px;height: 150px;background-color: red; "></div>
+    <div style="width: 150px;height: 150px;background-color: green; "></div>
+    <div style="width: 150px;height: 150px;background-color: blue;float: left;"></div> -->
+    <!-- 
+        右 _  _
+        左 _  _
+        _ 左 _
+        _  _ 左
+        情况：27种 
+
+         时刻把握住浮动只会对后面元素以及父元素造成影响。不能对它前面的元素造成影响。
+     -->
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .contry{
+            width: 500px;
+            /* height: 500px; */
+            /* overflow: hidden; */
+            border: 5px solid red;
+            margin: 50px;
+            float: left;
+        }
+        /* 并集 分组 */
+        .tom{
+            width: 100px;
+            height: 100px;
+            background-color: gold;
+            /* 元素脱离了标准文档流 */
+            float: left;
+        }
+        .jack{
+            width: 120px;
+            height: 120px;
+            background-color: skyblue;
+            /* jack也脱离了标准文档流 */
+            float: left;
+            /* clear:both是谁受影响了，加在谁的身上 */
+            /* clear: both; */
+        }
+    </style>
+</head>
+<body>
+    <div class="contry">
+        <div class="tom">tom</div>
+        <div class="jack">jack</div>
+    </div>
+</body>
+</html>
