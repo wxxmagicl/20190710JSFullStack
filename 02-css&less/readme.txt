@@ -348,3 +348,61 @@ CSS中核心：盒子  浮动   flex
 
 今日作业：
     1，浮动的27种情况小练习
+
+---------------------
+层布局（定位）：position    background-position  定位是完全脱离标准文档流的一种布局方案
+    相对定位：relative
+        参考点：是盒子本身它应该出现的位置
+        应用：局部的细节调整   作为绝对定位的参考点
+    绝对定位：absolue
+        参考点：根据设置的参考点（position: relative; ）进行定位
+        它会向上找参考点，找到就以这个参考点为主，找不到，就一直向上找，直接到body,如果body也没有设置参考点，那么就以body为参考点
+        绝对定位由于它完全脱离了标准文档流，它可能发现覆盖，可能通过z-index改变先后顺序，z-index的值越大，越靠前
+        如果一个span绝对定位了，那么它就变成块级了，就可以设置宽度。
+        父相子绝
+        应用： 在一个盒子上，放一个小盒子
+    固定定位：flxed
+        参考点：视窗
+    static: 
+        不定位 默认的 
+    不管是什么类型的定位，都需要设置偏移量。top,right,bootom,left
+
+-----------------------------------
+flex ----> 干掉了float  
+    四大概念：
+        容器，项目，主轴，交叉轴 
+
+容器：如果在一个盒子上面，设置display:flex，那么这个盒子就是一个容器
+项目：容器的直接子元素，叫项目
+主轴：在容器中，项目默认是按主轴方向排列，默认是从左向右排列
+交叉轴：与主轴垂直的那个轴
+
+容器相关的属性：
+    flex-direction：改变主轴方向  row   column  row-reverse  column-reverse 
+    flex-wrap:项目足够多的时候，是否换行  wrap  nowrap
+    * flex-flow:flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap
+    justify-content:处理富余空间  flex-start  flex-end   center   space-between  space-around
+    align-items: 定义项目在交叉轴上如何对齐  flex-start  flex-end   center
+    align-content : 当有多根主轴时，多根主轴的对齐方式。相当于处理垂直方向上的富余空间。
+
+项目相关的属性：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

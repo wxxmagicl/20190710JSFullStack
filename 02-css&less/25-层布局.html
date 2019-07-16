@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .father{width: 300px;height: 300px;border: 3px solid red;
+            position: relative;
+            margin: 200px;
+        }
+        .son1{
+            width: 80px;height: 80px;
+            background-color: blue;
+            /* 绝对定位：根据我们设置的参考点进行定位 */
+            position: absolute;
+            /* 先不设置参考点 */
+            top:100px;
+            left: 100px;
+            z-index: 1000;
+        }
+        .son2{
+            width: 80px;
+            height: 80px;
+            background-color: red; 
+            position: absolute;
+            top:120px;
+            left: 120px;
+            z-index: 100;
+
+            /* 相对于自己原本的位置 */
+            /* position: relative;  */
+            /* 设置偏移量 */
+            /* top: 10px; */
+            /* left: 10px; */
+        }
+        .son3{width: 80px;height: 80px;background-color: green;}
+        input{
+            position: relative; 
+            top:1px;
+        }
+        img{
+            position: fixed;
+            right: 10px;
+            top: 50%;
+            margin-top: -250px;
+        }
+        li{
+            /* list-style: none; */
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <input type="radio"> 同意
+    <div class="father">
+        <span class="son1">son1</span>
+        <span class="son2">son2</span>
+        <!-- <div class="son3">son3</div> -->
+    </div>
+
+    <img src="../02-css&less/imgs/sideNav.png" alt="">
+</body>
+</html>
