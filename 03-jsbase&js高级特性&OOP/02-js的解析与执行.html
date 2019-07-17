@@ -1,0 +1,90 @@
+<!-- 代码块 -->
+<script>
+    // var a = 110;
+    // console.log(a)
+    // console.log(b)  // b is not defined
+</script>
+<!-- 代码块 -->
+<script>
+    // var b = 666;
+    // console.log(b)
+    // console.log(a)
+</script>
+<!-- 代码块 -->
+<script>
+    // var b;  // 声明变量 
+    // 代码在真正执行之前一个预编译--->提升变量声明
+    // var a = 110;
+    // console.log(a)
+
+    // console.log(b)
+    // var b = 666;  // 把一个值赋给变量 
+</script>
+<!-- 代码块 -->
+<script>
+    // console.log(a)  // a is not defined
+    // a = 110;  
+
+    // console.log(1)
+    // console.log(2)
+    // console.log(3)
+    // console.log(4)
+    // console.log(5)
+
+    // console.log(i)
+    // // 循环  i叫循环变量  全局变量还是局部变量？ --->全局
+    // for(var i = 1; i<=5; i++){
+    //     console.log(i)
+    // }
+
+    // 声明一个函数
+    // function f(){
+    //     console.log(a)
+    //     var a = 110;  // 提升到了函数内部最前面
+    // }
+    // // console.log(a)  // a is not defined
+    // f();
+</script>
+
+<script>
+    // f();
+    // 函数声明 一个函数就是一个功能块
+    // function f(){
+    //     console.log("f....")
+    // }
+    // 函数调用
+    // f()
+
+    // 如果一个函数只有函数声明，没有函数调用，相当于函数没有写
+    // 也就是说你要想让一个函数执行，那你必须要调用这个函数
+
+    // 函数有两种定义方式：函数声明   函数表达式
+    // 函数表达式 本质是一个变量  只不过这个变量的值是函数
+    // g()  // undefine()   g is not a function
+    // var g = function(){console.log("g...")}
+    // g();
+</script>
+
+<script>
+    // f();  // f is not defined
+</script>
+<script>
+    // function f(){
+    //     console.log("f....")
+    // }
+</script>
+
+<script>
+    // 解析：都提升
+    console.log(a)
+    console.log(b)
+    // if else是一种二选一的结构 ()条件成立走第一个{}  条件不成立走else后面的{}
+    if(true){
+        var a = 1;
+    }else{
+        var b = 2;
+    }
+    console.log(a)
+    console.log(b)
+</script>
+
