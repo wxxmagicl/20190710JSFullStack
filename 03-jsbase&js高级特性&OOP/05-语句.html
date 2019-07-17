@@ -1,0 +1,147 @@
+<script>
+    // for循环 参数1：循环变量  参数2：条件  参数3：改变循环变量
+    // i++ 表示在本身的基础上加1
+    // for(let i=0;i<=10; i++){
+    //     console.log(i)
+    // }
+
+
+
+    // ---------------------求0到100的和
+    //    let sum = 0;
+    //    for(let i=0; i<=100; i++){
+    //     // sum = sum+i;
+    //     sum += i;
+    //    }
+    //    console.log(sum)
+
+    //---------------- 操场一圈是400m   跑10圈   一共跑了多少m？
+    // let distans = 0;
+    // // 跑了多少圈
+    // for(let i=0; i<10; i++){
+    //     distans += 400;
+    // }
+    // console.log(distans)
+
+    // ----------------------  九九乘法表 
+    // let str = "" 
+    // for(let i=1; i<=9; i++){
+    //     for(let j = 1; j<=i; j++){
+    //         str += j+"*"+i+"="+i*j;
+    //         str += "  "
+    //     }
+    //     str += "\n";
+    // }
+    // console.log(str)
+
+    //----------------- 百钱买百鸡  今有鸡翁一，值钱伍；鸡母一，值钱三；鸡鶵三，值钱一。凡百钱买鸡百只，问鸡翁、母、鶵各几何？
+    // let cock = 0;
+    // let hen = 0;
+    // let chick = 0;
+    // for (cock = 0; cock <= 100; cock++) {
+    //     for (hen = 0; hen <= 100; hen++) {
+    //         for (chick = 0; chick <= 100; chick++) {
+    //             if(cock+hen+chick == 100 && 5*cock+3*hen+chick/3==100){
+    //                 console.log(cock+"---"+hen+"---"+chick)
+    //             }
+    //         }
+    //     }
+    // }
+
+    // -------------- 如果给你一堆数据[3,1,4,2,7,9]  把数据进行排序（冒泡排序）
+    // 交换两个数：let a = 1; let b = 2; 
+    // let a = 1;
+    // let b = 2;
+    // // 交换两个数
+    // let c = a;
+    // a = b;
+    // b = c;
+    // function bubbleSort(arr){
+    //     // 排序 
+    //     for(let i=0; i<arr.length; i++){
+    //         for(let j=0; j<arr.length-1-i;j++){
+    //             if(arr[j]>arr[j+1]){
+    //                 let temp = arr[j+1]
+    //                 arr[j+1] = arr[j]
+    //                 arr[j] = temp
+    //             }
+    //         }
+    //     }
+    //     // 返回排序后的数据
+    //     return arr;
+    // }
+    // let arr = [5,4,3,2,1]
+    // let newArr = bubbleSort(arr)
+    // console.log(newArr)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // let a = 1;
+    // a++;
+    // a++;
+    // a++;
+    // a++;
+    // console.log(a)
+
+    // let a = 1;
+    // // = 叫赋值运算符  把=右边的东西给左边
+    // // a++ a的值是加1了   a++整体也有一个值，++在后，整体的值是一个旧值
+    // let b = a++;
+    // console.log(a) // 2
+    // console.log(b)  // 1
+
+    // let a = 1;
+    // // 无论++在前，还是++在后，那么a的值肯定要加1
+    // // 如果++在后，整体的值是一个旧值，如果++在前，整体的值是一个新值
+    // let b = ++a; 
+    // console.log(a) // 2
+    // console.log(b) // 2
+</script>
+
+<script>
+    // // 九九乘法表
+    // var str = "";
+    // // 控制行数
+    // for(let i=1; i<=9; i++){
+    //     // 控制每一行有多少列
+    //     for(let j=1; j<=i; j++){
+    //         str += i+"*"+j+"="+j*i;
+    //         str += "  "
+    //     }
+    //     str += "\n"
+    // }
+    // console.log(str)
+
+    // 冒泡排序
+    let arr = [5,4,3,2,1]
+    function maopao(newArr){
+        // 排序
+        let len = newArr.length;
+        for(let i=0; i<len; i++){
+            for(let j=0; j<len-1-i;j++){
+                if(arr[j]>arr[j+1]){
+                    let temp = arr[j+1]
+                    arr[j+1] = arr[j]
+                    arr[j] = temp
+                }
+            }
+        }
+        return newArr;
+    }
+    let res = maopao(arr)
+    console.log(res)
+</script>

@@ -1,0 +1,121 @@
+<script>
+// var来定义变量 
+// var a = 110;   // 全局变量 作用域：函数内外都能访问
+// function f(){
+//     var b = 666;  // 局部变量 作用域：只能在函数内访问
+// }
+// // 块级作用域 {}
+// {
+//     var c = 888;
+// }
+// console.log(c)
+
+// {
+//     // let就会把这个a的作用域限定到{} ---->块级作用域
+//     // 块级作用域  表示出来这个块，就不能访问
+//     let a = 110;
+//     // console.log(a)
+// }
+// console.log(a)   //a is not defined
+
+// console.log(a)
+// let a = 110;   // 使用let声明的变量，不会提升
+
+// 全局变量都会挂到window上面
+// var a = 110;
+// console.log(a)
+// console.log(window.a)
+
+// let a = 110;
+// console.log(a)
+// console.log(window.a)
+
+
+
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <ul>
+        <li>0</li>
+        <li>1</li>
+        <li>2</li>
+    </ul> -->
+    <script>
+        // html(dom元素)提供结构   css提供样式     js操作html和css
+        // js可以操作dom元素（获取，删除，改变--->对DOM元素的增删改查）
+        // let lis = document.getElementsByTagName("li"); // 获取3个li
+        // lis[0] 事件源  onclick on叫前缀 click事件  function(){}事件处理程序，监听器
+        // lis[0].onclick = function(){
+        //     console.log(0)
+        // }
+        // lis[1].onclick = function(){
+        //     console.log(1)
+        // }
+        // lis[2].onclick = function(){
+        //     console.log(2)
+        // }
+
+        // console.log(lis.length)
+
+        // 利用for循环来简化上面的代码     var 
+        // for(let i=0; i<lis.length; i++){
+        //     lis[i].onclick = function(){
+        //         console.log(i)
+        //     }
+        // }
+        // {
+        //     lis[0].onclick = function(){
+        //         console.log(0)
+        //     }
+        // }
+        // {
+        //     lis[1].onclick = function(){
+        //         console.log(1)
+        //     }
+        // }
+        // {
+        //     lis[2].onclick = function(){
+        //         console.log(2)
+        //     }
+        // }
+        // 为什么上面使用var结果就都是3  为什么上面使用let结果就是正确的
+        // JS是单线程的，一次只能干一件事，当有耗时的任务，它就交给另一个线程来处理吧
+        // 但是主线程会继续向下执行
+
+        // let会形成一个块级作用域  每一次循环 都要形成一个块级作用域
+    </script>
+
+    <script>
+        // let a = 1;
+        // a = 123;
+        // console.log(a)  //Cannot access 'a' before initialization
+        // let a = 1;
+        // let a = 2;
+        // console.log(a)  ///'a' has already been declared
+    </script>
+    <script>
+        // console.log(PI)  // Cannot access 'PI' before initialization
+        // const PI = 3.14;
+        // const PI = 2.14;  // 'PI' has already been declared
+        // PI = 666;
+        // console.log(PI)  // Assignment to constant variable.
+
+        // const PI;
+        // console.log(PI) // Missing initializer in const declaration
+
+        const obj = {name:"wangcai"};
+        console.log(obj)
+        obj.age = 100;
+        console.log(obj)
+        // obj = {age:100}
+    </script>
+</body>
+</html>
