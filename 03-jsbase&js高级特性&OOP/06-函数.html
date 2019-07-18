@@ -40,15 +40,170 @@
 // console.log(r)
 // console.log(jc(n))
 
-function f(){
+// function f(){
 
-}
-// 如果没有给返回值，默认返回undefined
-console.log(f())
+// }
+// // 如果没有给返回值，默认返回undefined
+// console.log(f())
 
-{
-    let a = 110;
-}
+// {
+//     let a = 110;
+// }
 
+
+</script>
+<script>
+    // 参数传递
+    // function f(a){
+    //     a = 666;
+    // }
+    // let x = 110;
+    // f(x);
+    // console.log(x)  // 110
+</script>
+<script>
+    // function f(a){
+    //     a[0] = 666;
+    // }
+    // let x = [1,2];
+    // f(x);
+    // console.log(x)  // [666,2]
+</script>
+
+<script>
+    // function f(a){
+    //     a = [4,5]
+    // }
+    // let x = [1,2];
+    // f(x);
+    // console.log(x)  
+    // console.log(a)  
+</script>
+
+<script>
+    // function f(a) {
+    //     a[0] = [4, 5]
+    // }
+    // let x = [1, 2];
+    // f(x);
+    // console.log(x)
+    // console.log(a) // [[4,5],2]
+
+</script>
+
+<script>
+    // let a = [1];
+    // function f(a){
+    //     a[100] = 3;
+    //     a = [1,2,3];
+    // }
+    // f(a);
+    // console.log(a)
+</script>
+
+<script>
+
+    // let arr = [1,2,3]
+    // // 把666赋值给arr中的第101个位置
+    // arr[100] = 666;
+    // console.log(arr)
+</script>
+
+<script>
+// //相加的函数
+// function add(a,b){
+//     return a+b;
+// }
+// //相减的函数
+// function sub(a,b){
+//     return a-b;
+// }
+// //定义一个函数，这个功能是计算两个数相加或相减
+// // f叫形参 函数调用时，实参add会赋值给f，f就相当于add
+// // x,y叫形参 只不过x,y接收的是基本的数据类型
+// function compute(f,x,y){
+//     return f(x,y);
+// }
+// // compute(); 函数调用  add叫实参，只不过个实参是一个函数    1,2也是实参，只不过这是实参是基本数据类型中的nubmer
+// console.log(compute(add,1,2))
+</script>
+
+<script>
+    // 函数表达式
+    // var add = function (a, b) {
+    //     return a + b;
+    // }
+    // function compute(f, x, y) {
+    //     return f(x, y);
+    // }
+    // console.log(compute(add,1,2))
+</script>
+
+<script>
+    // 函数声明
+    // function compute(f, x, y) {
+    //     return f(x, y);
+    // }
+    // // 函数调用  调用的时候，给它传递了一个函数声明
+    // let rs = compute(function(a,b){
+    //     return a + b;
+    // },1,2)
+    // console.log(rs)
+</script>
+
+<script>
+
+    // 定义器  3000毫秒  3s  3s之后，调用函数
+    // setTimeout(function(){
+    //     console.log(123)
+    // },3000)
+</script>
+
+<script>
+    // 计算函数执行耗费的时间  getTime()  new Date()
+    // 计算冒泡排序耗费的时间
+    // let d1 = new Date();  // 日期对象
+    // let startTime = d1.getTime(); // 开始时间
+    // let arr = [5,4,3,2,1]
+    // for(let i=0; i<arr.length; i++){
+    //     for(let j=0; j<arr.length-1-i; j++){
+    //         if(arr[j]>arr[j+1]){
+    //             let temp = arr[j+1];
+    //             arr[j+1] = arr[j];
+    //             arr[j] = temp;
+    //         }
+    //     }
+    // }
+    // for (let i = 0; i < 100000; i++) {
+    //     for (let i = 0; i < 10000; i++) {
+
+    //     }
+    // }
+    // console.log(arr)
+    // let endTime =  new Date().getTime(); // 结束时间
+    // let time = endTime - startTime;
+    // console.log(time)
+</script>
+
+<script>
+
+    
+    function f1() {
+        for (let i = 0; i < 100000; i++) {
+            for (let i = 0; i < 10000; i++) {
+
+            }
+        }
+    }
+    // 定义一个函数：功能是计算代码块（函数）运行的时间
+    function computeTime(f) {
+        let startTime = new Date().getTime(); // 开始时间
+        f()
+        let endTime = new Date().getTime(); // 开始时间
+        let time = endTime - startTime;
+        return time;
+    }
+    // f1叫实参
+    console.log(computeTime(f1))
 
 </script>
