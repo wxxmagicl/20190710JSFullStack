@@ -127,21 +127,83 @@
     // console.log(str)
 
     // 冒泡排序
-    let arr = [5,4,3,2,1]
-    function maopao(newArr){
-        // 排序
-        let len = newArr.length;
-        for(let i=0; i<len; i++){
-            for(let j=0; j<len-1-i;j++){
-                if(arr[j]>arr[j+1]){
-                    let temp = arr[j+1]
-                    arr[j+1] = arr[j]
-                    arr[j] = temp
-                }
-            }
-        }
-        return newArr;
-    }
-    let res = maopao(arr)
-    console.log(res)
+    // let arr = [5,4,3,2,1]
+    // function maopao(newArr){
+    //     // 排序
+    //     let len = newArr.length;
+    //     for(let i=0; i<len; i++){
+    //         for(let j=0; j<len-1-i;j++){
+    //             if(arr[j]>arr[j+1]){
+    //                 let temp = arr[j+1]
+    //                 arr[j+1] = arr[j]
+    //                 arr[j] = temp
+    //             }
+    //         }
+    //     }
+    //     return newArr;
+    // }
+    // let res = maopao(arr)
+    // console.log(res)
+</script>
+
+<script>
+    // // 9 * 9
+    // let str = "";
+    // // 控制行数
+    // for(let i=1; i<10; i++){
+    //     // 控制每行的列数
+    //     for(let j=1; j<=i; j++){
+    //         str += j+"*"+i+"="+i*j;
+    //         str += " "
+    //     }
+    //     str += "\n"
+    // }
+    // console.log(str)
+
+    // 冒泡思路：从最前面拿到第1个元素，挨个与后面的元素进行比较，如果当前元素大于后面某个元素，需要交换。
+    // let arr = [5,4,3,2,1]
+    // for(let i=0;i<arr.length;i++){
+    //     // console.log(arr[i])
+    //     for(let j=0; j<arr.length-i-1;j++){
+    //         if(arr[j]>arr[j+1]){
+    //             let temp = arr[j+1];
+    //             arr[j+1] = arr[j];
+    //             arr[j] = temp;
+    //         }
+    //     }
+    // }
+    // console.log(arr)
+
+    // 选择排序
+    // let arr = [5,4,3,2,1]  // 数组  索引（下标，默认是从0开始）
+    // var minIndex;  // 索引
+    // var temp;
+    // for(let i=0; i<arr.length; i++){
+    //     minIndex = i;
+    //     for(let j=i+1; j<arr.length; j++){
+    //         if(arr[j]<arr[minIndex]){
+    //             minIndex = j;
+    //         }
+    //     }
+    //     temp = arr[i]
+    //     arr[i] = arr[minIndex]
+    //     arr[minIndex] = temp;
+    // }
+
+    // 选择排序：假定第一个元素是最小的元素，从第二个元素开始找，找比第一个元素还小的元素的索引。如果找到了，就把这个索引赋给minIndex，还要继续向后找，如果又找到一个比minIdex对应的元素还小的元素，就把这个元素的索引继续赋给minIdex。
+            //    这一趟结束后，我们就找到了最小的元素，和最前面那个元素交换位置。
+    // let arr = [5,4,3,2,1]
+    // var minIndex,temp;
+    // for(let i=0; i<arr.length; i++){
+    //     minIndex = i;
+    //     for(let j=i+1; j<arr.length; j++){
+    //         if(arr[j]<arr[minIndex]){
+    //             minIndex = j
+    //         }
+    //     }
+    //     temp = arr[i];
+    //     arr[i] = arr[minIndex];
+    //     arr[minIndex] = temp;
+    // }
+    // console.log(arr)
 </script>
