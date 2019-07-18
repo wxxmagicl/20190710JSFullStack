@@ -188,22 +188,80 @@
 <script>
 
     
-    function f1() {
-        for (let i = 0; i < 100000; i++) {
-            for (let i = 0; i < 10000; i++) {
+    // function f1() {
+    //     for (let i = 0; i < 100000; i++) {
+    //         for (let i = 0; i < 10000; i++) {
 
-            }
-        }
-    }
-    // 定义一个函数：功能是计算代码块（函数）运行的时间
-    function computeTime(f) {
-        let startTime = new Date().getTime(); // 开始时间
-        f()
-        let endTime = new Date().getTime(); // 开始时间
-        let time = endTime - startTime;
-        return time;
-    }
-    // f1叫实参
-    console.log(computeTime(f1))
+    //         }
+    //     }
+    // }
+    // // 定义一个函数：功能是计算代码块（函数）运行的时间
+    // function computeTime(f) {
+    //     let startTime = new Date().getTime(); // 开始时间
+    //     f()
+    //     let endTime = new Date().getTime(); // 开始时间
+    //     let time = endTime - startTime;
+    //     return time;
+    // }
+    // // f1叫实参
+    // console.log(computeTime(f1))
 
+</script>
+
+<script>
+    // function f(){
+    //     // 只能在函数内部访问arguments
+    //     console.log(arguments)
+    // }
+    // f(1,2,3)
+</script>
+<script>
+    // 累加
+    // function f(){
+    //     // console.log(arguments)
+    //     let sum = 0;
+    //     for(let i=0; i<arguments.length; i++){
+    //         sum += arguments[i]
+    //     }
+    //     return sum;
+    // }
+    // console.log(f(1,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9))
+</script>
+
+<script>
+    // // 数组
+    // let arr = [1,2,3,"hello"]
+    // console.log(arr[3])
+    // // 对象
+    // let obj = {name:"wangcai",age:100}
+    // console.log(obj.name)
+    // console.log(obj.age)
+</script>
+
+<script>
+
+    // function f(name,age){
+    //     arguments[0] = 888;
+    //     // arguments 数组  [1,2]
+    //     console.log(a)
+    // }
+    // f("wangcai",12)
+
+</script>
+
+<script>
+    function f(){
+        // 不行
+        // return 1;
+        // return 2;
+        // return 3;
+
+        // 也是只能返回最后一个
+        // return 1,2,3;
+
+        // 返回多个值
+        // return [1,2,3]
+        return {a:1,b:2,c:3}
+    }
+    console.log(f())
 </script>
