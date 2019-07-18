@@ -1,0 +1,62 @@
+<script>
+
+    // function f(a,b,c,d=10){
+    //     console.log(a)
+    //     console.log(b)
+    //     console.log(c)
+    //     console.log(d)
+    // }
+    // // 
+    // console.log(f(1,2,3))
+
+</script>
+
+<script>
+    // Rest parameter must be last formal parameter
+    // function f(a,b,...abc){
+    //     console.log(a)
+    //     console.log(b)
+    //     console.log(arguments)
+    //     // arguments 
+    //     console.log(abc)
+    // }
+    // f(1,2,3,4)
+
+</script>
+<script>
+    // function f(a,b){
+    //     return a+b;
+    // }
+    // 箭头函数 没有function关键字   =>
+    // var f = (a,b)=>{
+    //     return a+b;
+    // }
+    // console.log(f(1,2))
+
+    // 特点1：如果形参只有1个，()可不写   只有一个形参时，()才能省，其它情况都不省
+    // let f = (a)=>{
+    //     console.log(a)
+    // }
+    // let f = a=>{
+    //     console.log(a)
+    // }
+    // f(2)
+
+    // 特点2：如果函数体只有一条语句，{}也可以省，return也需要省。
+    // let f = (a)=>{
+    //     return a;
+    // }
+    // let f = (a)=>a;
+    // console.log(f(2))
+
+    // 特点3：返回了对象
+    // let f = ()=>{
+    //     return {name:"wangcai"}
+    // }
+    // let f = ()=>({name:"wangcai"})
+    // console.log(f())
+
+    let f = ()=>console.log(123)
+    
+    f()
+</script>

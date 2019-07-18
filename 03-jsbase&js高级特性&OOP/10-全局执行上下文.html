@@ -1,0 +1,41 @@
+<script>
+    // 当代码跑起来后，默认进入全局代码---->产生全局的执行上下文
+    // let a = 1;
+    // let f = ()=>{
+    //     console.log("f...")
+    // }
+    // let g = ()=>{
+    //     f()
+    // }
+    // g()
+</script>
+
+<script>
+    // // 全局执行上下文件  全局地变量和函数 
+    // let a = 10;  // 全局变量
+    // // f的父是全局代码
+    // let f = ()=>{   // 全局函数
+    //     let b = 20;
+    //     console.log("f...")
+    //     // g的父是f
+    //     let g = ()=>{  // 内部函数，局部函数
+    //     let c = 30
+    //         console.log("g...")
+    //     }
+    //     g();
+    // }
+    // f();
+</script>
+
+<script>
+    let a = 1;
+    let f = ()=>{
+        let b = 2;
+        let g = ()=>{
+            let c = 3;
+        }
+        console.log(c)  // c is not defined
+        g()
+    }
+    f()
+</script>
