@@ -1,0 +1,104 @@
+<script>
+    // function f(){
+    //     let a = 110;
+    //     function g(){
+    //         console.log(a)
+    //     }
+    //     g()
+    // }
+    // f()
+</script>
+<script>
+    // debugger;  
+    // function f(){
+    //     var a = 1;
+    //     function g(){
+    //         console.log(a)
+    //     }
+    //     // 在js中，也可以返回一个函数
+    //     return g;
+    // }
+    // f()();
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+</body>
+<script>
+    var lis = document.getElementsByTagName("li")
+    // for循环会立即执行
+    // for(var i=0; i<lis.length; i++){
+    //     // 事件的三要素  异步任务
+    //     lis[i].onclick = function(){
+    //         console.info(i)
+    //     }
+    // }
+
+    // 方案1：
+    // for(let i=0; i<lis.length; i++){
+    //     lis[i].onclick = function(){
+    //         console.info(i)
+    //     }
+    // }
+
+    // 方案2：
+    // for(var i=0; i<lis.length; i++){
+    //     // console.log(i)
+    //     // 保存i 
+    //     lis[i].index = i
+    //     lis[i].onclick = function(){
+    //         //  Cannot read property 'index' of undefined
+    //         // console.log(lis[i].index)
+    //         // 在监听器中事件源需要使用this来代码
+    //         console.log(this.index)
+    //     }
+    // }
+
+    // 方案3
+    // for(var i=0; i<lis.length; i++){
+    //     console.log(i)
+    //     // 把监听器变成立即调用函数表达式
+    //     lis[i].onclick = (function(index){  // index是形参
+    //         // 形参相当于函数内部的局部变量 
+    //            return function (){
+    //                 console.log(index)
+    //             }
+    //     }(i))  // 这里的i实参
+    // }
+    // for(var i=0; i<lis.length; i++){
+    //     lis[i].onclick = (function(index){
+    //         return function(){
+    //             console.log(index)
+    //         }
+    //     }(i))
+    // }
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    // var obj = {name:"wangcai"}
+    // obj.age = 100;
+    // console.log(obj.age)
+</script>
+</html>

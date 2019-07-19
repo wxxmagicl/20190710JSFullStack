@@ -1,0 +1,53 @@
+<script>
+    // 函数表达式
+    let f = function(){
+        // 函数表达式
+        let g = function(){
+            console.log("g...")
+        }
+        // 在函数内部可以返回一个函数
+        return g;
+    }
+    // let res = f()
+    // // res是g  g是一个函数
+    // res()
+    // f()();
+</script>
+<script>
+    // (function m(){
+    //     console.log("m...")
+    // }()) 
+    // m() 手动调用
+
+    // (function m(){
+    //     console.log("m...")
+    // })();
+
+    // +function m(){
+    //     console.log("m...")
+    // }();
+    // -function m(){
+    //     console.log("m...")
+    // }();
+    // *function m(){
+    //     console.log("m...")
+    // }();
+    // /function m(){
+    //     console.log("m...")
+    // }();
+    // !function m(){
+    //     console.log("m...")
+    // }();
+    // 最后我们的代码会压缩 ，会把空白符去掉
+    (function m(){
+        console.log("m...")
+    }());
+
+    (function m(){
+        console.log("m...")
+    }())
+    // (function m(){
+    //     console.log("m...")
+    // }())
+
+</script>
