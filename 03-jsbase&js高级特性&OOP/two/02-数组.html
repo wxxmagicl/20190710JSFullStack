@@ -260,3 +260,93 @@
     // arr.fill("*",0,2) // 包前不包后
     // console.log(arr)
 </script>
+
+<script>
+    // 解构赋值
+    // let arr = [1,2,3]
+    // // let newArr = arr;
+    // let [a,b,c] = arr
+    // console.log(a)
+    // console.log(b)
+    // console.log(c)
+</script>
+<script>
+    // let [a,b,c,d] = [1,2,3]
+    // console.log(d)
+
+    // let [a,b] = [1,2,3]
+    // console.log(a)
+    // console.log(b)
+
+    // let [a,,b] = [1,2,3]
+    // console.log(a)
+    // console.log(b)
+
+    // let [a,b,c,d=10] = [1,2,3]
+    // console.log(a)
+    // console.log(b)
+    // console.log(c)
+    // console.log(d)
+
+    // let [a,b,[c]] = [1,2,["m"]]
+    // console.log(a)
+    // console.log(b)
+    // console.log(c)
+</script>
+
+<script>
+    // var {name,age} = {name:"wangcai",age:100}
+    // console.log(name)
+    // console.log(age)
+
+    // {}只能放键值对，如果键和值是一样，可以只写一个
+    // var {name,age} = {name:"wangcai",age:100}
+    // var {name:name,age:age} = {name:"wangcai",age:100}
+
+    // 对象是属性的无序集合
+    // var {age:age,name:name} = {name:"wangcai",age:100}
+    // console.log(name)
+    // console.log(age)
+
+    // var {age1:age,name:name} = {name:"wangcai",age:100}
+    // console.log(name)
+    // console.log(age)
+
+    // console.log(Math.ceil(1.1))
+    // console.log(Math.floor(1.9))
+    // console.log(Math.random())
+
+    // let {ceil,floor,random} = Math
+    // console.log(ceil(3.1))
+
+    // let {push} = []  // push
+    // console.log(push)
+
+    // function f({name}){
+    //     console.log(name)
+    // }
+    // f({name:"wangcai"})
+
+    // let a = 1;
+    // let b = 2;
+    // let c = a;
+    // a = b;
+    // b = c;
+    // console.log(a)
+    // console.log(b)
+
+    // let a = 1;
+    // let b = 2;
+    // // 数组的解构赋值
+    // [b,a] = [a,b]
+    // console.log(a)
+    // console.log(b)
+
+    function f(){
+        return {name:"wangcai",age:100}
+    }
+    // let obj = f()
+    let {name,age} = f()
+    console.log(name)
+    console.log(age)
+</script>

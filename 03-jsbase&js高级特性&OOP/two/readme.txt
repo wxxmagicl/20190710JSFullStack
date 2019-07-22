@@ -21,6 +21,13 @@ ES6:
     includes()  判断一个元素是否在一个数组中
     fill() 给数组填充指定的值
 
+------------ ES6中的解构赋值
+数组的解构赋值
+    let [a,b,c] = [1,2,3]
+对象的解构赋值
+    let {name:name,age:age} = {name:"wangcai",age:100}
+    let {name,age} = {name:"wangcai",age:100}
+
 
 
 
