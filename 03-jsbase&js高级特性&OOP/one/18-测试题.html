@@ -1,0 +1,388 @@
+<script>
+    // var a = function abc(num) {
+    //     abc = num;
+    //     console.log(num)
+    //     console.log(abc)
+    //     console.log(typeof abc)
+    // }
+    // a(1)
+</script>
+<script>
+    // var a = function abc(num) {
+    //     abc = num;
+    //     return 1;
+    // }
+    // a(1)
+    // console.log(abc())
+</script>
+<script>
+    // this.a = 20
+    // var test = {
+    //     a: 40,
+    //     init: function () {
+    //         console.log(this.a)
+    //     }
+    // }
+    // test.init()
+</script>
+<script>
+    // this.a = 20
+    // var test = {
+    //     a: 40,
+    //     init: function () {
+    //         console.log(this.a)
+    //     }
+    // }
+    // var fn = test.init
+    // fn();
+</script>
+
+<script>
+    // this.a = 20
+    // var test = {
+    //     a: 40,
+    //     init: function () {
+    //         function go(){
+    //             console.log(this.a)
+    //         }
+    //         go();
+    //     }
+    // }
+    // test.init()
+</script>
+<script>
+    // this.a = 20
+    // var test = {
+    //     a: 40,
+    //     init: function () {
+    //         function go() {
+    //             console.log(this.a)
+    //         }
+    //         return go;
+    //     }
+    // }
+    // var s = test.init()
+    // s();
+</script>
+<script>
+    // function test(a){
+    //     this.a = a;
+    // }
+    // test.prototype.a = 20;
+    // test.prototype.init = function(){
+    //     console.log(this.a)
+    // }
+    // var s = new test(30);
+    // s.init();
+</script>
+<script>
+    // this.a = 20;
+    // var test = {
+    //     a:40,
+    //     init:function(){
+    //         console.log(this.a)
+    //     }
+    // }  // ?;
+    // (function(){
+    //     var fn = test.init;
+    //     fn()
+    // })()
+</script>
+<script>
+    // this.a = 20;
+    // var test = {
+    //     a:40,
+    //     init:()=>{
+    //         console.log(this.a)
+    //     }
+    // }
+    // test.init()
+</script>
+<script>
+    // this.a = 20;
+    // var test = {
+    //     a: 40,
+    //     init: function() {
+    //         console.log(this.a)
+    //     }
+    // }
+    // var s = test.init.bind(this)
+    // s();
+</script>
+<script>
+    // var s = {
+    //     a:function(){
+    //         console.log(1)
+    //     },
+    //     b(){
+    //         console.log(this)
+    //     }
+    // }
+    // s.b()
+</script>
+<script>
+    // var s = {
+    //     a: function () {
+    //         console.log(1)
+    //     },
+    //     // 不支持new
+    //     b() {
+    //         console.log(2)
+    //     }
+    // }
+    // var f = s.a.bind(this)
+    // new f();
+    // var p = s.b.bind(this)
+    // new p();
+</script>
+<script>
+    // this.test = 11;
+    // var s = {
+    //     a: function () {
+    //         console.log(this)
+    //     }
+    // }
+    // var f = s.a.bind(this)
+    // // f()
+    // // new f();
+</script>
+<script>
+    // this.test = 11;
+    // var s = {
+    //     a: function () {
+    //         console.log(1+this.test)
+    //     }
+    // }
+    // var f = s.a.bind(this)
+    // new f();
+</script>
+<script>
+    // this.test = 11;
+    // var s = {
+    //     a:()=>{
+    //         console.log(1 + this.test)
+    //     }
+    // }
+    // var f = s.a.bind(this)
+    // new f();
+</script>
+<script>
+    // function C2(a){
+    //     this.a = a;
+    // }
+    // C2.prototype.a = "lao";
+    // console.log((new C2().a))
+</script>
+<script>
+    // function C2(a) {
+    //     this.a = a;
+    // }
+    // C2.prototype.a = "lao";
+    // console.log((new C2()).a)
+</script>
+<script>
+    // function test(a){
+    //     this.a = a;
+    // }
+    // test.prototype.a = 20;
+    // test.prototype.init = function(){
+    //     console.warn(this.a)
+    // }
+    // var s = new test();
+    // s.init();
+</script>
+<script>
+    // function C1(name) {
+    //     if (name) this.name = name;
+    // }
+    // function C2(name) {
+    //     this.name = name;
+    // }
+    // function C3(name) {
+    //     this.name = name || 'fe';
+    // }
+    // C1.prototype.name = "aaa";
+    // C2.prototype.name = "bbb";
+    // C3.prototype.name = "ccc";
+    // console.log((new C1().name) + (new C2().name) + (new C3().name));
+</script>
+<script>
+// var a = 20;
+// {
+//     a = 50;
+//     let a = 40;
+// }
+</script>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+</ul>
+<script type="text/javascript">
+    // var list_li = document.getElementsByTagName("li");
+    // // 4种方案实现？
+    // for (var i = 0; i < list_li.length; i++) {
+    //     list_li[i].onclick = function () {
+    //         // this.innerHTML
+    //         console.log(i);
+    //     }
+    // }
+</script>
+<script>
+    // function test(m){
+    //     m = {
+    //         v:5
+    //     }
+    // }
+    // var m = {
+    //     k:30
+    // }
+    // test(m);
+    // alert(m.v)
+</script>
+<script>
+    // 三种结果？？？？  老式浏览器 函数提升--->2   
+    // function f(){
+    //     console.log(1)
+    // }
+    // (function(){
+    //     // var f  现在浏览器
+    //     if(false){
+    //         function f(){
+    //             console.log(2)
+    //         }
+    //     }
+    //     console.log(typeof f)
+    //     // f();
+    // })();
+</script>
+<script>
+    // 三种结果？？？？  老式浏览器 函数提升--->2   
+    // function f() {
+    //     console.log(1)
+    // }
+    // // var f  现在浏览器
+    // if (false) {
+    //     function f() {
+    //         console.log(2)
+    //     }
+    // }
+    // console.log(typeof f)
+    // f();
+</script>
+<script>
+    // 不同浏览器效果不一样
+    // console.log([, ,].length)
+</script>
+<script>
+// 请用一句话算出0~100之间学生的学生等级，如90~100输出1，80~90为2，以次类推，不允许使用if switch等
+// var score = 88;
+// console.log(Math.ceil(10-score/10))
+// // 10 - 98/10 = 1
+</script>
+<script>
+// 请用一句话遍历变量a  a = "abc"
+// Array.from(a)  [...new Set(a)]  Array.prototype.slice.call
+</script>
+
+<script>
+    // 请在下面写出JavaScript面向对象编程的混合式继承。并写出ES6版本的继承。
+    // 要求：汽车是父类，Cruze是子类。父类有颜色、价格属性，有售卖的方法。Cruze子
+    // 类实现父类颜色是红色，价格是140000,售卖方法实现输出如下语句：将 红色的Cruze
+    // 买给了小王价格是14万。
+    // function Car(color) {
+    //     this.color = color;
+    // }
+    // Car.prototype.show = function () {
+    //     console.log(this.color);
+    // }
+
+    // function BMW(color) {
+    //     //属性的构造函数执行了一次父类
+    //     Car.call(this, color);
+    // }
+    // var __prototype = Object.create(Car.prototype);
+    // __prototype.constructor = BMW;
+    //如果Car的构造函数比较复杂
+    // BMW.prototype = new Car("red");
+    // BMW.prototype = __prototype;
+    // BMW.prototype.test = function () { }
+    // const bwm = new BMW("red");
+    // console.log(bwm);
+
+    // class Car {
+    //     constructor(color) {
+    //         this.color = color;
+    //     }
+    //     show() {
+    //         console.log(this.color);
+    //     }
+    // }
+    // class BMW extends Car {
+    //     constructor(color) {
+    //         super(color)
+    //     }
+    // }
+    // const bwm = new BMW("yellow");
+    // bwm.show();
+</script>
+
+<script>
+    // 手写bind
+    // 深拷贝
+</script>
+
+<script>
+// 请你写出如何利用EcmaScript6/7（小Demo）优化多步异步嵌套的代码？
+</script>
+<script>
+    // function fn() {
+    //     // window.length
+    //     console.log(this.length);
+    // }
+    // var abc = {
+    //     length: 5,
+    //     method: function (fn) {
+    //         fn();
+    //     }
+    // };
+    // abc.method(fn, 1);
+</script>
+<script>
+    // function fn() {
+    //     // window.length
+    //     console.log(this.length);
+    // }
+    // var abc = {
+    //     length: 5,
+    //     method: function (fn) {
+    //         arguments[0]();
+    //     }
+    // };
+    // abc.method(fn, 1);
+</script>
+<script>
+    // var length = 10;
+    // function fn() {
+    //     console.log(this.length);
+    // }
+    // var abc = {
+    //     length: 5,
+    //     method: function (fn) {
+    //         fn();
+    //         arguments[0]();
+    //     }
+    // };
+    // abc.method(fn, 1);
+</script>
+<script>
+    function abc() {
+
+    }
+    // new的时候才去原型链上找
+    abc.prototype.a = 11;
+    console.log(abc.a)
+</script>
