@@ -209,8 +209,9 @@
     //     }
     // }
     // console.log(typeof f)  // function
-    // // f();  // 1
-    // console.log(f)
+    // console.log(typeof f)  // undefined
+    // f();  //  f is not a function
+    // console.log(f)  // undefined
 </script>
 <script>
     // 请用一句话算出0~100之间学生的学生等级，如90~100输出1，80~90为2，以次类推，不允许使用if switch等
@@ -218,4 +219,31 @@
     // var score = 88;
     // console.log(Math.ceil(10-score/10))
 // 10 - 98/10 = 1
-</script>   
+</script>
+<script>
+    // function f(){
+    //     console.log("f...")
+    // }
+    // var f = 110;
+    // f()
+    // console.log(f)
+</script>
+<script>
+    // 提升之后的代码  函数是一等公民
+    // function f() {
+    //     console.log("f...")
+    // }
+    // var f;
+    // f = 110;
+    // f()
+    // console.log(f)
+</script>
+<script>
+    // function k(){
+    //     console.log("k...")
+    // }
+    // var k
+    // k = 666;
+    // k()  //  k is not a function
+    // 如果有变量有函数，都提升，那么函数先提升
+</script>
