@@ -1,0 +1,221 @@
+<script>
+    // var a = function abc(num) {
+    //     abc = num;
+    //     console.log(num)  // 1
+    //     // 函数 
+    //     console.log(abc)  // 如果打印出一个函数，说明abc是只读的，如果打印出来1，说明，可以给函数名赋值
+    //     // 函数的typof是function
+    //     console.log(typeof abc) // function ?    number
+    // }
+    // a(1)
+</script>
+<script>
+    // var f = function g(){
+    //     // 对于函数表达式来说，如果function后面又加了一个函数名
+    //     // 后面这个函数名，在外面不能调用
+    //     // 后面这个函数名，在函数内部可以调用
+    //     console.log(g)
+    //     console.log("a...")
+    // }
+    // f()
+
+    // function f(){
+
+    // }
+    // console.log(typeof f)
+</script>
+
+<script>
+    // var a = function abc(num) {
+    //     abc = num;
+    //     return 1;
+    // }
+    // a(1)
+    // console.log(abc())  // abc is not defined
+</script>
+<script>
+    // 调用this就指向谁
+    // this.a = 20  // 在全局的window上挂了一个a，a的值是20
+    // // test是一个对象{}
+    // var test = {
+    //     a: 40,
+    //     init: function () {
+    //         console.log(this.a)
+    //     }
+    // }
+    // console.log(test.a)
+    // test.init()
+</script>
+<script>
+    // // 全局的东西都要挂到window上
+    // a = 10;
+    // console.log(window.a)
+    // // 在全局中this，表示window
+    // console.log(this)
+    // console.log(this.a)
+    // this.b = 20; // 
+</script>
+<script>
+    // 调用this就指向谁
+    // this.a = 20
+    // var test = {
+    //     a: 40,
+    //     init: function () {
+    //         console.log(this.a) // 40  &  20
+    //     }
+    // }
+    // var fn = test.init
+    // // 调用了，fn全局的，在window上挂着呢   window.fn()
+    // fn();
+</script>
+<script>
+    // this.a = 20
+    // var test = {
+    //     a: 40,
+    //     init: function () {
+    //         // console.log(this.a)
+    //         function go() {
+    //             console.log(this.a)   // 调用this就指向谁
+    //         }
+    //         // 肯定不是test调用  也不是init()
+    //         // 只有对象才能调用一个方法
+    //         go(); // 肯定不是40  为啥是20
+    //     }
+    // }
+    // // 什么是test调用了？
+    // test.init()
+</script>
+
+<script>
+    // this.a = 20
+    // var test = {
+    //     a: 40,
+    //     init: function () {
+    //         function go() {
+    //             console.log(this.a)
+    //         }
+    //         return go;
+    //     }
+    // }
+    // // s是全局变量  s挂到window上
+    // var s = test.init()
+    // s();  // 20
+</script>
+
+<script>
+    // this.a = 20;
+    // var test = {
+    //     a: 40,
+    //     init: function () {
+    //         console.log(this.a)
+    //     }
+    // };
+    // // 如果IIFE前面是一个对象，需要在{}后面加分号;  所以你见到IIFE，先看一下它前面和后面有没有分号
+    // (function () {
+    //     var fn = test.init;
+    //     fn()
+    // })()
+</script>
+<script>
+    // this.a = 20;
+    // var test = {
+    //     a: 40,
+    //     // 在箭头函数中没有this,箭头函数中的this要向上找一级
+    //     init: () => {
+    //         console.log(this.a)
+    //     }
+    // }
+    // test.init()
+</script>
+<script>
+    // function test(m) {  // 形参 
+    //     m = { v: 5 }
+    // }
+    // var m = { k: 30 }
+    // test(m); // m是实参
+    // alert(m.v)  
+</script>
+<script>
+
+    // function f() {
+    //     console.log(1)
+    // } // 如果IIFE前面是一个对象的话，对象后面要加;
+    // // 在之前有的火狐浏览器中，它是把IIFE中的函数提升到了最前面
+    // // 在IIFE外面可以访问f()
+    // // 现在主流浏览器中，它并没有把IIFE中的函数调用到代码段的最前面
+    // // 提升到了IIFE的最前面。
+    // // 在IIFE中的提升，并不是全部给提升
+    // (function () {
+    //     var f;
+    //     if (false) {
+    //         f=function() {
+    //             console.log(2)
+    //         }
+    //     }
+    //     console.log(f)
+    //     // f();  //  f is not a function
+    // })();
+</script>
+<script>
+    // // 这个面试题有3种结果
+    // function f() {
+    //     console.log(1)
+    // }
+    // (function () {
+    //     // 函数声明会提升：
+    //     //     之前（在火狐浏览器中间版本）全部提升到了代码段最前面 结果可能有两种
+    //     //     现在并没有提升到最前面，提升到IIFE块的最前面
+    //     //         但是它并没有全部的提升，你可以想象是把f提供了，整个函数体并没有提升
+    //     if (false) {
+    //         function f() {
+    //             console.log(2)
+    //         }
+    //     }
+    //     console.log(f)  // undefined
+    //     f()
+    //     // f()  //  f is not a function
+    // })()
+</script>
+<script>
+    // function f() {
+    //     console.log(1)
+    // }
+    // (function g() {
+    //     if (false) {
+    //         function f() {
+    //             console.log(1)
+    //         }
+    //     }
+    //     // console.log(f)  // undefined
+    //     // f();  // f is not a function
+    // })()
+</script>
+<script>
+// function f(){
+//     console.log("f...")
+// }
+// function f(){
+//     console.log("g...")
+// }
+// f()
+</script>
+<script>
+    // function f() {
+    //     console.log(1)
+    // }
+    // if (false) {
+    //     function f() {
+    //         console.log(2)
+    //     }
+    // }
+    // console.log(typeof f)  // function
+    // // f();  // 1
+    // console.log(f)
+</script>
+<script>
+    // 请用一句话算出0~100之间学生的学生等级，如90~100输出1，80~90为2，以次类推，不允许使用if switch等
+    // if..else   switch  小白
+    // var score = 88;
+    // console.log(Math.ceil(10-score/10))
+// 10 - 98/10 = 1
+</script>   
