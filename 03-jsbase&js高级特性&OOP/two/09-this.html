@@ -1,0 +1,241 @@
+<script>
+    // console.log(this)  // window
+    // function f(){
+    //     console.log(this)  // window
+    // }
+    // f()
+    // let obj = {
+    //     name:"wangcai",
+    //     say:function(){
+    //         console.log(this)
+    //     }
+    // }
+    // 谁调用了包含this的方法，那么this就指向谁
+    // obj调用了包含this的方法，那么this就指向obj
+    // obj.say();  // {name: "wangcai", say: ƒ}
+
+    // let fn = obj.say;
+    // // fn是window调用了，fn对应的方法中this指向window
+    // fn();  // window
+</script>
+
+<script>
+
+    // this = "hello"  // Invalid left-hand side in assignment
+
+</script>
+
+<script>
+// 如果this出现在普通的函数（不在对象里面），那么this就是window
+// 如果this出现在一个对象的方法中，this可能指向这个对象，也可以指向window
+// 如果在调用函数之前加一个new的话，会创建并返回一个新的对象，而这个函数内部的this就会指向这个对象。
+// 可以通过Function对象的apply和call方法来指定函数内部的this的值。
+</script>
+
+<script>
+    // function f(){
+    //     console.log(this) // 
+    // }
+    // // res就是一个新的对象
+    // let res = new f();
+</script>
+
+<script>
+    function f() {
+        console.log(this)
+    }
+    // 把f当用一个普通的函数进行调用了
+    // f();
+    // 把f当作一个构造器进行new  new--->对象
+    // new f();
+    // 如果你要想new一个函数，那么这个函数就叫构造器，如果你想把一个函数当作是构造器，最好把这个函数名处首字母大写
+
+    // function Person(){
+
+    // }
+    // // Person 本质是函数  只不是我们是把它当作构造器
+    // // 构造器的首字母大写
+    // let lisi = new Person();
+</script>
+<script>
+    // function Person(name,age){
+    //     this.name = name;
+    //     this.age = age;
+    // }
+    // // a是一个对象  Person内部的this就是a
+    // let a = new Person("lisi",30)
+    // console.log(a.name)
+    // let b = new Person("wangwu",40);
+    // console.log(b.name)
+</script>
+
+<script>
+    // function f(){
+    //     console.log(this)
+    // }
+    // let obj = {
+    //     name:"wangcai"
+    // }
+    // f是对象，有两个方法，一个是call  一个是apply
+    // 让一个对象去借用一个方法
+    // 让obj去借用f方法，借用完，调用了
+    // f.call(obj)  
+    // f()
+
+</script>
+
+<script>
+// function f(a,b){
+//     console.log(a,b)
+// }
+// let obj = {
+//     name:"wangcai"
+// }
+// f.call(obj,1,2)
+</script>
+
+<script>
+// function f(a,b){
+//     console.log(a,b)
+// }
+// let obj = {
+//     name:"wangcai"
+// }
+// f.apply(obj,[1,2])
+</script>
+
+<!-- <script>
+// 判断数据类型 typeof instanceof  不太准确
+// toString    Object.prototype.toString()
+let a = [1,2,3];// Array
+let b = {name:"wangcai"};// Object
+let c = function(){} // Function
+
+console.log(Object.prototype.toString.call(a))  // [object Array]
+console.log(Object.prototype.toString.call(b))  // [object Object]
+console.log(Object.prototype.toString.call(c))  // [object Function]
+</script> -->
+
+<!-- <script>
+// 两个对象，共用方法，输出name
+
+let obj1 = {
+    name:"z3",
+    age:20,
+    say:function(){
+        console.log(`我是${this.name},年龄是${this.age}`)
+    }
+}
+let obj2 = {
+    name:"l4",
+    age:30,
+    say:function(){
+        console.log(`我是${this.name},年龄是${this.age}`)
+    }
+}
+obj1.say()
+obj2.say()
+
+</script> -->
+
+<script>
+    // 两个对象，共用方法，输出name
+    // var f = function(){
+    //     console.log(`我是${this.name},年龄是${this.age}`)
+    // }
+    // let obj1 = {
+    //     name: "z3",
+    //     age: 20,
+    // }
+    // let obj2 = {
+    //     name: "l4",
+    //     age: 30,
+    // }
+    // f.call(obj1)
+    // f.call(obj2)
+
+</script>
+
+<!-- <script>
+    // 定义一个函数，功能是计算一个函数所用的时间
+    function computeTime(f) {
+        let startTime = new Date().getTime();
+
+        // f()
+        // argements[0] ---》 函数  
+        let p = [];
+        for(let i=1; i<arguments.length; i++){
+            p.push(arguments[i])
+        }
+        // p就是传递过来的参数
+        f.apply(null,p)
+
+        let endTime = new Date().getTime();
+        let yourTime = endTime - startTime;
+        return yourTime;
+
+    }
+    function f1() {
+        for (let i = 0; i <= 10000; i++) {
+            for (let i = 0; i <= 10000; i++) {
+
+            }
+        }
+    }
+    function f2(a){}
+    function f3(a,b){}
+    function f4(a,b,c){}
+    console.log(computeTime(f1))
+    console.log(computeTime(f2,10))
+    console.log(computeTime(f3,10,20))
+    console.log(computeTime(f4,10,20,30))
+</script> -->
+
+<!-- <script>
+    // 定义一个函数，功能是计算一个函数所用的时间
+    function computeTime(f) {
+        let startTime = new Date().getTime();
+        // f()
+        let p = [];
+        for(let i=1;i<arguments.length; i++){
+            p.push(arguments[i])
+        }
+        f.apply(null,p)
+        let endTime = new Date().getTime();
+        let yourTime = endTime - startTime;
+        return yourTime;
+    }
+    function f1() { }
+    function f2(a) { }
+    function f3(a,b) { }
+    function f4(a,b,c) { }
+    function f5(a,b,c,d) { }
+    console.log(computeTime(f2,10))
+    console.log(computeTime(f3,10,20))
+    console.log(computeTime(f4,10,20,30))
+    console.log(computeTime(f5,10,20,30,40))
+</script> -->
+
+<!-- <script>
+如果方法内部有this。如何确定这个this的值呢？
+答：谁调用了this就是谁。
+看方法前的那个对象是谁，this就指向谁。
+（1）有明确的对象
+        例如：Obj.say();say 的当前对象是obj，所以say中的this 就指向obj。
+
+（2）没有明确的对象
+    如果这个函数没有明确说是哪个对象的，则它肯定是属于window对象的，所以this就会指向window.
+    
+（3）如果是call和apply的方式，这时，this指向第一个参数
+    例如：f.call(obj1)，f中的this指向obj1。
+</script> -->
+<!-- <script>
+this总结：
+1，this出现在全局中，this是window
+2，this出现在一个普通的函数中（不是方法），this是window
+3，this出现在一个对象的方法，this可以是这个对象，也可以是window
+4，call和apply可以改变this指向，指向()第一个参数
+5，一个函数没有明确指出谁调了，this是window
+
+谁调用了this就是谁。
+</script> -->

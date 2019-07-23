@@ -58,6 +58,11 @@ OOP：
     一切都是对象
     对象是属性的集合
     对象是由函数创建
+    原型和原型链
+    JSON  JavaScript Object Notation  客户端与服务器通信的一种数据格式
+    this 
+
+    
 
 
 

@@ -1,0 +1,60 @@
+<script>
+// 每一个函数都有一个prototype属性
+// prototype是key，它的value是对象，这个对象叫原型对象
+// function f(){
+// }
+// console.log(Array)
+
+// 之前学习的关于数组中的很多方法，都是在Array的原型对象上面。
+// console.log(Array.prototype)
+
+// let arr = [1,2,3];
+// arr.map  arr.push   arr.pop   arr.xxxx
+</script>
+<script>
+// 一个原型对象，是一个对象，对象中有很多的属性和方法，肯定有一个叫
+// constructor。constructor指向这个函数本身。
+
+// function f(){}
+// console.log(f.prototype.constructor == f)  // true
+</script>
+
+<script>
+// 每一个对象都有一个__proto__属性，它对应的值是一个对象，这个对象叫隐式原型。
+// let obj = {}
+// console.log(obj)
+
+// let arr = [];
+// console.log(arr)
+
+// function f(){}
+// console.log(f)
+
+// Array叫构造器-->函数(prototype)-->对象(__proto__)
+// console.log(Array)
+</script>
+
+<script>
+// // 对象的__proto__属性　指向　创建这个对象的函数的prototype
+// let obj = {name:"wangcai"}  // 通过Object创建
+// // console.log(obj)
+// console.log(obj.__proto__ == Object.prototype)  // true
+</script>
+
+<script>
+// let arr = [1,2,3]
+// console.log(arr)
+// console.log(arr.__proto__) // arr.__proto__  叫原型对象
+// console.log(arr.__proto__.__proto__) 
+// console.log(arr.__proto__.__proto__.__proto__) 
+
+// console.log(arr.abc())
+// console.log(arr)
+// console.log(arr.__proto__)
+
+// let arr = [1,2,3]
+// Array.prototype.abc = function(){
+//     alert("123")
+// }
+// arr.abc()
+</script>
