@@ -1,0 +1,233 @@
+<script>
+    // 访问属性
+    // let obj = {
+    //     name:"wangcai",
+    //     age:666,
+    //     say:function(){
+    //         console.log("hello")
+    //     }
+    // }
+    // 访问属性  通过.运算符
+    // console.log(obj.name)
+    // console.log(obj.age)
+    // console.log(obj.say())
+
+    // []来访问
+    // console.log(obj[name])  // undefined  把name当成变量
+    // console.log(obj["name"])  // wangcai  把name当成key
+    // console.log(obj['name'])  // wangcai  把name当成key
+    // let k = "name";
+    // console.log(obj[k]) // k就是一个变量  "name"
+    // console.log(obj.k) // undefined 如果key是一个变量只能通过[]来访问
+
+    // console.log(obj.haha) // undefined 如果访问一个不存在的属性，结果就是 undefined 
+</script>
+
+<script>
+    // 增加属性  空对象
+    // let obj = {}
+
+    // 通过.运算符添加属性
+    // obj.name = "wangcai" 
+    // obj.age = 666;
+    // obj.say = function(){
+    //     console.log("hello")
+    // }
+
+    // 通过[]添加属性
+    // obj["name"] = "wangcai" 
+    // obj["age"] = 88 
+    // obj["say"] = function(){
+    //     console.log("hello")
+    // } 
+
+    // console.log(obj.name)
+    // console.log(obj.age)
+    // console.log(obj.say())
+
+    // 如果增加同名的属性，会覆盖掉
+    // obj.name = "wangcai" 
+    // obj.name = "xiaoqiang" 
+    // console.log(obj.name)
+</script>
+
+<script>
+    // 属性是有特征 
+    // configurable:是否可以删除。默认为true。
+    // writable：是否可以修改属性的值。默认为true。
+    // enumerable：是否可以枚举。是否可以通过for in 循环来输出。默认为true。
+    // Value:值。默认为undefined
+
+    // let obj = {};
+    // obj.name = "wangcai" 
+    // console.log(obj.name)
+
+    // obj.name = "xiaoqinag"
+    // console.log(obj.name)
+
+    // delete obj.name
+    // console.log(obj.name)
+
+</script>
+
+<!-- <script>
+    // 精细化设置对象的属性
+    let obj = {};
+    // Object是对象  defineProperty()是Object上的一个方法
+    Object.defineProperty(obj,"name",{
+        configurable:false, // 不能删除
+        value:"wangcia",  // 默认
+        enumerable:false,  // 不能循环
+        writable:false, // 不能修改
+    })
+    console.log(obj.name)
+    obj.name = "haha"
+    console.log(obj.name)
+    delete obj.name
+    console.log(obj.name)
+    for(var i in obj){
+        // i是变量   i是key   obj[i]
+        console.log(i,obj[i])
+    }
+</script> -->
+
+<!-- <script>
+    // 设置一个只读的属性，模拟常量
+    var obj = {};
+    // 常量名一般建议都大写
+    Object.defineProperty(obj,"NAME",{
+        configurable:false, // 不能删除
+        value:"hello",  // 默认
+        enumerable:true,  // 不能循环
+        writable:false, // 不能修改
+    })
+    // NAME就是一个常量
+    console.log(obj.NAME)
+    obj.NAME = "hi"
+    console.log(obj.NAME)
+</script> -->
+
+<!-- <script>
+// 函数被调用次数的例子 
+function f(){
+    f.counter++;
+}
+f.counter = 0;
+f()
+f()
+f()
+f()
+f()
+console.log(f.counter)
+</script> -->
+
+<!-- <script>
+    var obj = {};
+    obj.name = "wangcai" 
+    obj.say = function(){
+        console.log("hello")
+    }
+    for(var i in obj){
+        console.log(i+"----"+obj[i])
+    }
+    // 修改特征
+    Object.defineProperty(obj,"name",{
+        enumerable:false
+    })
+    for(var i in obj){
+        console.log(i+"----"+obj[i])
+    }
+</script> -->
+
+<script>
+    // var a = 100;  // 加var的变量不能被删除
+    // delete window.a;
+    // console.log(window.a)
+
+    // a = 100;  // 不加var的变量能被删除
+    // delete window.a;
+    // console.log(window.a)
+</script>
+
+<script>
+    // Object.keys() 可以得到一个对象上所有可以循环出来的属性
+    // let obj = {
+    //     name: "wangcai",
+    //     age: 666,
+    //     say: function () {
+    //         console.log("hello")
+    //     }
+    // }
+    // console.log(Object.keys(obj)) // ["name", "age", "say"]
+</script>
+
+<script>
+    // in hasOwnProperty
+    // let obj = {
+    //     name: "wangcai",
+    //     age: 666,
+    //     say: function () {
+    //         console.log("hello")
+    //     }
+    // }
+    // // console.log("name" in obj); // in会去它的原型对象上面的找
+    // console.log(obj.hasOwnProperty("name"))   // hasOwnProperty只会去它的内部找
+
+    // let arr = [1,2,3]
+    // // 查找arr中有没有push这个属性
+    // console.log(arr.hasOwnProperty("push"))  // false
+</script>
+
+<script>
+// 数组去重：一个简单的应用  下面的程序是错
+// let arr = [1,1,2,2,3,3]
+// let newArr = [];
+// for(let i=0; i<arr.length; i++){
+//     // in是用来判断一个属性（属性名）是否在一个对象中
+//     // 在数组去重中，我们要比较的是数组中的属性值
+//     if(arr[i] in newArr){
+//         // 不用管
+//     }else{
+//         newArr.push(arr[i])
+//     }
+// }
+// console.log(newArr)
+</script>
+
+<!-- <script>
+let arr = [1,1,2,2,3,3]
+let newArr = []; // 存放新的没有重复的元素
+let m = {} // 
+for(let i=0; i<arr.length; i++){
+    var t = arr[i]
+    if(m[t]){
+        // 不用管
+    }else{
+        newArr.push(arr[i])
+        // 如果元素已经加到新数组中了，那么就把标志变成true
+        m[t] = true;
+    }
+}
+console.log(newArr)
+</script> -->
+
+<script>
+// 定义一个函数，函数的功能：统计数组中各个元素出现次数
+let arr = [1,1,2,2,3,3]
+// {1:1,2:2,3:3}
+function k(arr){
+    let obj = {} // 里面保存每一个元素出现的次数
+    for(let i=0; i<arr.length; i++){
+        var t = arr[i]
+        if(obj.hasOwnProperty(t)){
+            // 不是第一次出现
+            obj[t] += 1;
+        }else{
+            // 第一次出现
+            obj[t] = 1
+        }
+    }
+    return obj;
+}
+console.log(k(arr))  // {1: 2, 2: 2, 3: 2}
+</script>

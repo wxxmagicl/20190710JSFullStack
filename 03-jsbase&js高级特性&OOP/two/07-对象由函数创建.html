@@ -1,0 +1,48 @@
+<script>
+// 数组由函数创建
+// let arr = [1,2,3]; // 字面量的方式创建的数组
+// arr叫对象  对象中有一个属性，叫constructor，指向创建这个对象的函数（构造器）
+// 构造器
+// console.log(arr.constructor == Array) // true
+
+// let arr2 = new Array(1,2,2)
+// console.log(typeof arr2)  //object
+// console.log(typeof Array)  //function
+
+// 所有的数组都是通过Array创建的
+
+</script>
+<script>
+// 函数由函数创建
+// function f1(){}
+// console.log(f1.constructor == Function)  // true
+
+// let f2 = new Function("x","y","return x+y")
+// console.log(f2(1,2))
+
+// function f3(){}
+// console.log(f1.constructor == f3.constructor) // true
+// console.log(f2.constructor == f3.constructor) // true
+// console.log(f2.constructor == f1.constructor) // true
+
+</script>
+<script>
+// 基本数据类型由函数创建
+// let a = new Number(1);
+// console.log(a.constructor == Number) // true
+
+// let b =111;
+// console.log(b.constructor)
+// console.log(b.constructor == Number) // true
+
+// let f = false;
+// console.log(f.constructor == Boolean) // true
+</script>
+<script>
+// 对象由函数创建
+var obj = {}
+console.log(obj.constructor == Object) // true
+
+var obj2 = new Object()
+console.log(obj.constructor == obj2.constructor)  // true
+</script>

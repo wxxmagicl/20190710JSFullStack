@@ -28,6 +28,36 @@ ES6:
     let {name:name,age:age} = {name:"wangcai",age:100}
     let {name,age} = {name:"wangcai",age:100}
 
+------------ JS中的对象
+对象：
+    对象是属性的无序集合。{age:100,name:"wangcai"}  name叫键，也叫key   "wangcai"叫值，也叫value
+
+JS中的对象分三类：
+    内置对象：由ECMA实现的，不需要程序自己实现。
+    宿主对象：DOM，BOM
+    自定义对象：程序员自己写的对象
+
+Global对象：
+    全局对象，在浏览器端这个对象是不存在。但有一个代言人，叫Window
+    声明的全局的数据都会挂载到window上面。
+
+ECMAScript:
+    浏览器的JS:没有Global对象
+    node中的JS:有Global对象
+
+在JS中，一切都是对象：
+    基本数据类型是对象：
+    引用数据类型是对象：
+
+    结论：一切都是对象
+
+document对象：
+    对象中肯定有很多方法和属性，其中就有一个属性，叫__proto__。它又指向了一个对象。
+
+OOP：
+    一切都是对象
+    对象是属性的集合
+    对象是由函数创建
 
 
 

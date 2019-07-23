@@ -1,0 +1,98 @@
+<!-- <script>
+    // 全局变量
+    var a = 1;
+    // window是一个对象   a作为window对象的一个属性
+    console.log(window.a)
+    function f(){
+        console.log("f...")
+    }
+    //window是一个对象    f作为window对象上的一个方法
+    console.log(window.f())
+    window.alert("hello")
+    window.setTimeout()
+    window.setInterval()
+</script> -->
+
+<!-- <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+<script>
+    // Dom对象  document文档----》html文档
+    let lis = document.getElementsByTagName("li")
+</script> -->
+
+<!-- <script>
+    console.log(document)
+</script> -->
+
+<script>
+    // string 
+    // let str = "helloworld"
+    // 说明str是对象，str刚开始是基本数据类型，当使用.length时，
+    // 它会瞬间包装成对象（包装类型对象）
+    // console.log(str.length)
+
+    // 尝试访问str.name str中没有name  str也是包装成一个对象
+    // console.log(str.name)  // undefined
+
+    // 包装类型对象，不能直接赋值
+    // str.name = "wangcai";
+    // console.log(str.name)
+
+    // 对于str还有很多的方法  str本身是一个基本数据类型，当你调用方法时，它也会包装成对象
+
+    // 如果new了，肯定是返回一个对象  new
+    // var str = new String("hello")
+    // console.log(typeof str)  // object
+
+</script>
+
+<script>
+// 函数也是对象  instanceof
+function f(a,b){
+}
+// console.log(f.name)
+// // 函数的形参个数
+// console.log(f.length)
+// console.log(typeof f) // function
+// console.log(typeof null)  // object  bug
+// 使用typeof测试一个数据的数据类型，有时候是不准确的
+
+// instanceof  运算符;关键字;实例;  Object是对象
+// console.log(f instanceof Object)  // true
+
+// let a = 110;
+// console.log(a instanceof Object) // false
+</script>
+
+<script>
+    // let arr = [1,2,3]
+    // console.log(arr.length)
+    // console.log(arr instanceof Object)  // true
+
+    // arr和str不一样，str在调用方法或属性时，会包装成一个对象
+    // 这个包装是瞬间的，但是arr是一个正经对象，那你就可以给这个对象
+    // 上面挂属性或方法
+    // arr.name = "hello"
+    // console.log(arr.name)
+</script>
+
+<script>
+    // let obj = {name:"wangcai"}
+    // console.log(obj.name)
+    // console.log(obj instanceof Object)
+</script>
+
+<!-- <script>
+    let a = 123;  // new Number()
+    let b;  // undefined  
+    let f = false; // boolean  new Boolean()
+
+    let str = "hello" // 包装成对象
+</script> -->
+
+<script>
+
+</script>
