@@ -61,6 +61,9 @@ OOP：
     原型和原型链
     JSON  JavaScript Object Notation  客户端与服务器通信的一种数据格式
     this 
+    创建对象有N种方式：构造器+原型 
+    继承  不劳而获  A   B   B构造器如果继承了A构造器，那么B构造器就可以使用A构造器中的数据
+
 
     
 

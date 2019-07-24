@@ -1,0 +1,144 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <style>
+        .tabContainer {
+            width: 500px;
+            margin: 50px auto;
+            border: 1px solid #ccc;
+        }
+
+        .tabContainer ul,
+        li {
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+
+        }
+
+        .tabContainer ul {
+            overflow: hidden;
+            background: #eee;
+        }
+
+        .tabContainer ul li {
+            float: left;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        .select {
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="tabContainer" id="tab2">
+        <ul>
+            <li class="select">选项1</li>
+            <li>选项2</li>
+            <li>选项3</li>
+        </ul>
+        <div class="tabBody">
+            <div>
+                选项1的内容
+            </div>
+            <div>
+                选项2的内容
+            </div>
+            <div>
+                选项3的内容
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="tabContainer" id="tab1">
+        <ul>
+            <li class="select">选项1</li>
+            <li>选项2</li>
+            <li>选项3</li>
+            <li>选项4</li>
+        </ul>
+        <div class="tabBody">
+            <div>
+                选项1的内容
+            </div>
+            <div>
+                选项2的内容
+            </div>
+            <div>
+                选项3的内容
+            </div>
+            <div>
+                选项4的内容
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        //思路:
+        /*
+            初始的条件：li元素的个数与tabBody中div的元素的个数相同
+            效果：点击某一个li时，对应的div处于可见（其它的div都要隐藏）
+            
+            实施：
+            给每个li添加点击事件：
+             （1）确保当前的li处于选中状态（给当前的li添加class='select'，把其它的li去掉 class）
+              (2)确保对应的div处于显示状态（给对应div添加display='block'，把其它的div隐藏:display='none'）
+        */
+        var tab = document.getElementById("tab1");
+        var lis = tab.getElementsByTagName("li")            //找到所有的li
+        var divBody = tab.getElementsByTagName("div")[0];   //找tabBody
+        var divs = divBody.getElementsByTagName("div");     //找与li对应的div
+        //console.info(divs);
+
+        for (var i = 0; i < lis.length; i++) {
+
+            //            lis[i].onclick = (function(index){
+            //                
+            //                return function(){
+            //                    console.info(index);
+            //                }
+            //                
+            //            })(i);
+
+            //            给每一个li加 click事件
+            lis[i].index = i;
+            lis[i].onclick = function () {
+                console.info(this.index);
+                //               1）确保当前的li处于选中状态（给当前的li添加class='select'，把其它的li去掉 class）
+
+                for (var j = 0; j < lis.length; j++) {
+                    lis[j].className = "";       //    先把所有的li去掉class，
+                    divs[j].style.display = "none";//  把所有的div全部设置不可见。
+                }
+                //                  把当前的lis加上class="select"
+                lis[this.index].className = "select";
+
+
+                //              (2)确保对应的div处于显示状态（给对应div添加display='block'，把其它的div隐藏:display='none'）
+
+                for (var j = 0; j < divs.length; j++) {
+                    divs[j].style.display = "none";
+                }
+                //                把当前的div设置为可见
+                divs[this.index].style.display = "block";
+
+                //  console.info(i);
+                //  console.info(lis[i].index);
+
+            }
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

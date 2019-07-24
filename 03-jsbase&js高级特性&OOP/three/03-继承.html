@@ -1,0 +1,85 @@
+<!-- <script>
+// 继承原型对象上面的方法
+function Parent(yourname){
+    this.name = yourname;
+}
+Parent.prototype.say = function(){
+    console.log(this.name)
+}
+
+function Son(yourname){
+    this.name = yourname;
+}
+// 让Son去继承Parent上的say方法  继承 
+Son.prototype = Parent.prototype
+// 修改constructor的指向
+Son.prototype.constructor = Son;
+
+let p = new Parent("Hello")
+p.say();
+
+let s = new Son("world")
+s.say()
+</script> -->
+
+<!-- <script>
+    // 继承父构造器上面的属性
+    function Parent(yourname) {
+        this.name = yourname;
+    }
+    // 原型上面主要放方法
+    Parent.prototype.say = function () {
+        console.log(this.name)
+    }
+    function Son(yourname) {
+        // 要继承Parent中的name
+        Parent.call(this, yourname)  // 继承属性
+    }
+    Son.prototype = Parent.prototype // 继承原型对象上面的方法
+    Son.prototype.constructor = Son; // 手动修改constructor指向
+    let p = new Parent("Hello")
+    p.say();
+    let s = new Son("world")
+    s.say()
+</script> -->
+
+<!-- <script>
+    function Parent(yourname) {
+        this.name = yourname;
+    }
+    Parent.prototype.say = function () {
+        console.log(this.name)
+    }
+    // 让Son去继承name属性和say方法
+    function Son(yourname) {
+        // 继承属性
+        Parent.call(this,yourname)
+    }
+    // 继承方法
+    Son.prototype = Parent.prototype;
+    Son.prototype.constructor = Son;
+</script> -->
+
+<script>
+    function Parent(yourname) {
+        this.name = yourname;
+    }
+    Parent.prototype.say = function () {
+        console.log(this.name)
+    }
+    // 让Son去继承name属性和say方法
+    function Son(yourname) {
+        // 继承属性
+        Parent.call(this, yourname)
+    }
+    // 下面的继承使用Son和Parent都指向了同一个原型对象
+    // Son.prototype = Parent.prototype;
+    // Son.prototype.constructor = Son;
+    
+    // 还可以把原型对象copy一份 让Son继承copy过来的
+    // Parent.prototype  循环一个对象 使用 for in
+    for(let i in Parent.prototype){
+        Son.prototype[i] = Parent.prototype[i]
+    }
+    Son.prototype.constructor = Son;
+</script>
