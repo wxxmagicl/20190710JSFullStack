@@ -1,0 +1,98 @@
+<!-- <script>
+// js的主线程是单线程，任务只能一个一个干
+// 同步任务
+console.log("start")
+// 耗时的任务（异步任务），把这个耗时的任务扔到异步队列中
+window.setTimeout(function(){
+    console.log("耗时任务")
+},10000)
+// 同步任务
+console.log("end")
+</script> -->
+
+<script>
+    // 有三个任务console.log(1)console.log(2)console.log(3)
+    // 过5s执行任务1，任务1执行完后，再过5s执行任务2.....
+    // window.setTimeout(function(){
+    //     console.log(1)
+    //     window.setTimeout(function(){
+    //         console.log(2)
+    //         window.setTimeout(function(){
+    //             console.log(3)
+    //         },5000)
+    //     },5000)
+    // },5000)
+
+</script>
+
+<script>
+    // console.log(Promise)  // ƒ Promise() { [native code] }
+
+    // new Promise()
+    // let p = new Promise();
+    // console.log(p) // Promise resolver undefined is not a function
+
+    // 默认情况下，Promise处理等待一个状态
+    // let p = new Promise(function(resolve,reject){
+    // });
+    // console.log(p)  // Promise {<pending>}
+</script>
+
+<!-- <script>
+    let p = new Promise(function (resolve, reject) {
+        // resolve  pending –> fullFilled
+        // reject  pending –> rejected
+        // resolve("包")
+        // reject("没钱")
+    });
+    // console.log(p) // Promise {<resolved>: "包"}
+       console.log(p)  // Promise {<rejected>: "没钱"}
+</script> -->
+
+<!-- <script>
+    let p = new Promise(function(resolve,reject){
+        let n = Math.random();
+        if(n>0.5){
+            resolve("包")
+        }else{
+            reject("没钱")
+        }
+    })
+    console.log(p)
+</script> -->
+
+<!-- <script>
+    let p = new Promise(function (resolve, reject) {
+        let n = Math.random();
+        if (n > 0.5) {
+            resolve("包")
+        } else {
+            reject("没钱")
+        }
+    })
+    p.then(function(res){
+        // res就是终值
+        console.log(res)
+    },function(err){
+        // err就是拒因
+        console.log(err)
+    })
+</script> -->
+
+<!-- <script>
+    let p = new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            let n = Math.random()
+            if(n>0.5){
+                resolve("包")
+            }else{
+                reject("没钱")
+            }
+        },5000)
+    })
+    p.then(res=>{
+        console.log(res)
+    },err=>{
+        console.log(err)
+    })
+</script> -->

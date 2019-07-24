@@ -99,6 +99,44 @@ OOP：
         }
         静态方法和静态属性    只能类来调用    实例不能调用
 
+-------------- JS中的异步
+1，进程与线程
+2，JS的主线程是单线程（一个工人）
+3，如果遇见一个比较耗时的任务，它会再找一个工人
+4，JS代码分同步任务和异步任务，先执行同步任务，然后执行异步任务
+5，是同步任务，还是异步任务，不是程序员说了算。也就是说异步任务都是规定好。
+6，大部分代码都是同步任务。
+7，常见的异步任务有：setTimeout,setInterval,读文件，去服务器请求数据...
+
+---读文件  服务端  js  node  
+let fs = require("fs")  // filesystem
+fs.readFile("./out.txt","utf-8",function(err,data){
+    if(err){
+        console.log(err)
+    }
+    console.log(data)
+})
+
+---------异步解决方案
+    1，回调函数   去解决异步时--->回调地狱
+    2，promise
+
+
+--------- promise 
+4：4大术语
+    解决（fulfill）
+    拒绝（reject）
+    终值（eventual value）
+    据因（reason）
+3：3种状态
+    等待态（Pending）
+    执行态（Fulfilled）
+    拒绝态（Rejected）
+2：2种事件
+    如果是pending –> fulfiied，就会触发onFulFilled事件
+    如果是pendeing –> rejected，就会触发onRejected事件
+1：1个对象
+    promise
     
 
 
