@@ -63,7 +63,41 @@ OOP：
     this 
     创建对象有N种方式：构造器+原型 
     继承  不劳而获  A   B   B构造器如果继承了A构造器，那么B构造器就可以使用A构造器中的数据
+        继承属性：Parent.call(this,xxx)
+        继承方法：Son.prototype = Parent.prototype   Son.prototype.constructor = Son;
+                 for in
 
+    ES6对对象的扩展：
+        1，Object.getOwnPropertyDescriptor() 得到某个对象中某个属性的特征
+        2，Object.defineProperty()   精细化设置一个对象的属性
+        3，Object.defineProperties()  精细化设置一个对象的多个属性
+        4，Object.getOwnPropertyNames()  得到对象中自已内部的所有的属性，放到一个数组中
+        5，Object.keys()  得到对象中所有的属性（包含它自己的和它原型上），放到一个数组中
+        6，Object.values()  得到对象中所有的属性（包含它自己的和它原型上）的值，放到一个数组中
+        7，Object.create()  用于对字面量对象实现继承
+        8，Object.getPrototypeOf()  得到一个对象的原型对象
+        9，Object.assign()  用于对象的合并
+        10，Object.preventExtensions()  不允许新增
+        11，Object.seal()  不允许新增、也不允许删除
+        12，Object.freeze()  不允许新增、不允许删除，不允许修改
+        13，对象中可以把属性简写，可以把方法简写
+
+    Class:
+        class 父类{
+            constructor(name,age){
+                this.name = name;
+                this.age = age;
+            }
+            say(){
+
+            }
+        }
+        class 子类 extends 父类{
+            constructor(name,age){
+                super(name,age)
+            }
+        }
+        静态方法和静态属性    只能类来调用    实例不能调用
 
     
 

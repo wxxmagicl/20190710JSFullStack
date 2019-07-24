@@ -1,0 +1,125 @@
+<script>
+    // function NBAPlayer(name, age, height) {
+    //     // 把属性扔到构造器中
+    //     this.name = name;
+    //     this.age = age;
+    //     this.height = height;
+    // }
+    // // 把方法扔到原型上面
+    // NBAPlayer.prototype.say = function () {
+    //     console.log(`我是${this.name},今年${this.age},我的身高是${this.height}`)
+    // }
+    // NBAPlayer.prototype.jump = function () {
+    //     console.log("jump...")
+    // }
+    // let p = new NBAPlayer("wangcai", 30, 188)
+    // p.say()
+    // p.jump()
+</script>
+
+<!-- <script>
+    // 这种写法还是ES5中的构造器与原型的语法糖
+    class NBAPlayer{
+        // 构造方法  当对象创建后会自动调用
+        constructor(name, age, height){
+            this.name = name
+            this.age = age
+            this.height = height
+        }
+        say(){
+            console.log(`我是${this.name},今年${this.age},我的身高是${this.height}`)
+        }
+        jump(){
+            console.log("jump...")
+        }
+    }
+    let p = new NBAPlayer("wangcai", 30, 188);
+    p.say()
+    p.jump()
+</script> -->
+
+<!-- <script>
+    // 球员
+    function NBAPlayer(name, age, height) {
+        this.name = name;
+        this.age = age;
+        this.height = height;
+    }
+    NBAPlayer.prototype.say = function () {
+        console.log(`我是${this.name},今年${this.age},我的身高是${this.height}`)
+    }
+    NBAPlayer.prototype.jump = function () {
+        console.log("jump...")
+    }
+    // 最佳 --》 球员
+    function MVP(name, age, height, year){
+        // 继承属性
+        NBAPlayer.call(this,name, age, height)
+        this.year = year;
+    }
+    // 继承方法  ---》 浅copy
+    // MVP.prototype = NBAPlayer.prototype
+    // MVP.prototype.constructor = MVP
+    // 继承方法  ---》 深copy 
+    for(let i in NBAPlayer.prototype){
+        MVP.prototype[i] = NBAPlayer.prototype[i]
+    }
+    MVP.prototype.constructor = MVP  // ?
+    MVP.prototype.showMVP = function(){
+        console.log(`我是${this.name},我是${this.year}年的MVP`)
+    }
+    var m1 = new MVP("xiaoqiang","30","191",2010)
+    m1.say()
+    m1.showMVP()
+</script> -->
+
+<!-- <script>
+    class NBAPlayer {
+        constructor(name, age, height) {
+            this.name = name
+            this.age = age
+            this.height = height
+        }
+        say() {
+            console.log(`我是${this.name},今年${this.age},我的身高是${this.height}`)
+        }
+        jump() {
+            console.log("jump...")
+        }
+    }
+    class MVP extends NBAPlayer {
+        constructor(name, age, height, year) {
+            super(name, age, height)
+            this.year = year;
+        }
+        showMVP() {
+            console.log(`我是${this.name},我是${this.year}年的MVP`)
+        }
+    }
+    var m1 = new MVP("xiaoqiang","33","191",2010)
+    m1.say()
+    m1.showMVP()
+</script> -->
+
+<!-- <script>
+    // 不只一个对象可以调方法，一个类也可以调方法，如果一个类去调用的方法，叫静态方法
+    class Animal{
+        static eat(){
+            console.log("eat...")
+        }
+    }
+    // 使用类去调用静态方法   静态方法是专门让类来调用的
+    Animal.eat()
+    // let a = new Animal()
+    // a.eat()
+</script> -->
+
+<!-- <script>
+    class Animal{
+        // m就不能叫变量  属性
+        static m = 1;
+    }
+    console.log(Animal.m)
+    // let a = new Animal()
+    // console.log(a.m)  // 1
+</script> -->
