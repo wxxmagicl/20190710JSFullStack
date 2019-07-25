@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1 v-text="msg"></h1>
+        <p v-text="name"></p>
+        <p v-html="name"></p>
+        <input type="text" v-model="msg">
+        <!-- 对于一个标签的属性值，不能使用插件表达式 -->
+        <!-- <a href="{{hrefname}}"></a> -->
+        <a v-bind:href="hrefname">百度</a>
+        <a :href="hrefname">百度</a>
+    </div>
+    <script>
+        var app = new Vue({
+            // el指定app管理的边界
+            el:"#app",
+            // 在app中data是一个属性   在后面讲的组件中data是一个方法
+            data: {
+                msg:"hello world",
+                name:"<strong>Wangcai</strong>",
+                hrefname:"http://www.baidu.com"
+            }
+        })    
+    </script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!-- <script>
+    var a = function abc(num) {
+        // abc只能在函数内部使用
+        abc = num;
+        console.log(num)  // 1
+        console.log(abc)  // 函数  函数名是只读
+        console.log(typeof abc) // 函数类型
+    }
+    a(1)
+</script> -->
+
+<!-- <script>
+    var a = function abc(num) {
+        abc = num;
+        return 1;
+    }
+    a(1) // 1
+    // console.log(abc())  //不能访问abc
+</script> -->
+
+<!-- <script>
+    this.a = 20
+    var test = {
+        a: 40,
+        init: function () {
+            console.log(this.a)
+        }
+    }
+    // 明确调用了
+    test.init()
+</script> -->
+
+<!-- <script>
+    this.a = 20
+    var test = {
+        a: 40,
+        init: function () {
+            console.log(this.a)
+        }
+    }
+    var fn = test.init
+    fn();
+</script> -->
+
+<!-- <script>
+    this.a = 20
+    var test = {
+        a: 40,
+        init: function () {
+            function go(){
+                console.log(this.a)
+            }
+            // 没有明确指出谁调用了go  window
+            go();
+        }
+    }
+    test.init()
+</script> -->
+
+<!-- <script>
+    this.a = 20
+    var test = {
+        a: 40,
+        init: function () {
+            function go() {
+                console.log(this.a)
+            }
+            return go;
+        }
+    }
+    var s = test.init()
+    s();
+</script> -->
+
+<!-- <script>
+    // 如果对象内部和原型上有同名的属性，访问先用内部自己的
+    function test(a){
+        this.a = a;
+    }
+    test.prototype.a = 20;
+    test.prototype.init = function(){
+        console.log(this.a)
+    }
+    var s = new test(30);
+    s.init();
+</script> -->
+
+<!-- <script>
+    this.a = 20;
+    var test = {
+        a: 40,
+        init: function () {
+            console.log(this.a)
+        }
+    }   // 对象和IIFE写在一起,对象后面要有分号
+        ; (function () {
+            var fn = test.init;
+            fn()
+        })();
+</script> -->
+
+
+
+
+
+<!-- <script>
+    this.a = 20;
+    var test = {
+        a: 40,
+        init: () => {
+            console.log(this.a)
+        }
+    }
+    test.init()
+</script> -->
+
+<!-- <script>
+    this.a = 20;
+    var test = {
+        a: 40,
+        init: function () {
+            console.log(this.a)
+        }
+    }
+    // f.call(obj)  apply  bind(改变this的指向，bind不会自动调用，返回一个函数)
+    var s = test.init.bind(this)
+    s();
+</script> -->
+
+<!-- <script>
+    var s = {
+        a: function () {
+            console.log(1)
+        },
+        b() {
+            console.log(this)  // s
+        }
+    }
+    s.b()  
+</script> -->
+<!-- <script>
+    function f(){
+        console.log(1)
+    }
+    new f()
+</script> -->
+<!-- <script>
+    var s = {
+        a: function () {
+            console.log(this)
+            // console.log(1)
+        },
+        // 方法简写后，不支持new
+        b() {
+            console.log(2)
+        }
+    }
+    // var f = s.a.bind(this)
+    // // f()
+    // var obj = new f();
+    var p = s.b.bind(this)
+    new p();  // p is not a constructor
+</script> -->
+
+<!-- <script>
+    this.test = 11;
+    var s = {
+        a: function () {
+            console.log(this)
+        }
+    }
+    var f = s.a.bind(this)
+    // f()
+    new f();
+</script> -->
+
+<script>
+    // this.test = 11;
+    // var s = {
+    //     a: function () {
+    //         console.log(1 + this.test)
+    //     }
+    // }
+    // var f = s.a.bind(this)
+    // // f()
+    // new f();  // NaN
+</script>
+<!-- <script>
+    this.test = 11;
+    var s = {
+        a: () => {
+            console.log(1 + this.test)
+        }
+    }
+    var f = s.a.bind(this)
+    // f()  // 12
+    new f(); // f is not a constructor
+</script> -->
+
+<!-- <script>
+    var s = {
+        a:  ()=>{
+            console.log(1)
+        }
+    }
+    var k = s.a.bind(this)
+    // new k()
+    new k()  // k is not a constructor
+</script> -->
+<!-- <script>
+(function(){alert(1)})
+(function(){alert(2)})  // 1
+</script> -->
+
+<!-- <script>
+// (function () { alert(1) }())
+// (function () { alert(2) }())  // 1 2  报错
+</script> -->
+
+<!-- <script>
+(function () { alert(1) })()
+;(function () { alert(2) })()  // 1 报错
+</script> -->
+
+<!-- <script>
+    function C2(a) {
+        this.a = a;
+    }
+    C2.prototype.a = "lao";
+    console.log((new C2().a))  // undefined
+</script> -->
+
+<!-- <script>
+    function C2(a) {
+        this.a = a;
+    }
+    C2.prototype.a = "lao";
+    console.log((new C2()).a)  // undefined
+</script> -->
+
+<!-- <script>
+    let obj = {
+        a:10
+    }
+    console.log((obj).a)
+</script> -->
+
+<!-- <script>
+    function test(a) {
+        this.a = a;
+    }
+    test.prototype.a = 20;
+    test.prototype.init = function () {
+        console.warn(this.a)
+    }
+    var s = new test();
+    s.init();  // undefined
+</script> -->

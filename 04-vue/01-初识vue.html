@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script> -->
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- {{}} 插值表达式 -->
+        <h1>{{msg}}</h1>
+        <p>{{name}}</p>
+    </div>
+    <script>
+        var app = new Vue({
+            // el指定app管理的边界
+            el:"#app",
+            // 在app中data是一个属性   在后面讲的组件中data是一个方法
+            data: {
+                msg:"hello world",
+                name:"wangcai"
+            }
+        })    
+    </script>
+</body>
+</html>
