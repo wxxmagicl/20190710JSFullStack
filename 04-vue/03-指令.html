@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .abc{
+            color: red;
+        }
+        .def{
+            background-color: blue;
+        }
+        .g-h{
+            color: yellow;
+        }
+    </style>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- v-text不能绑html标签 -->
+        <!-- <p v-text="name"></p>
+        <p v-html="age"></p>
+        <input v-model="name" type="text">
+        <a v-bind:href="hrefName">百度</a>
+        <a :href="hrefName">百度</a> -->
+        <!-- <p class="abc">这是一个p标签</p> -->
+        <!-- <p :class="className">这是一个p标签</p> -->
+        <!-- ? :  三元运算符 -->
+        <!-- <p :class="isPass ? className : ''">这是一个p标签</p> -->
+        <!-- <p :class="{abc:true}">这是一个p标签</p> -->
+        <!-- <p :class="{abc:isPass}">这是一个p标签</p> -->
+        <!-- <p :class="{abc:isPass,def:true}">这是一个p标签</p> -->
+        <!-- <p :class="{'g-h':true}">这是一个p标签</p> -->
+        <!-- <p :class="['abc','def']">这是一个p标签</p> -->
+
+        <!-- <p style="color: red">这是一个p标签</p> -->
+        <p :style="myStyle">这是一个p标签</p>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                name:"wangcai",
+                age:"<strong>18<strong>",
+                hrefName:"www.baidu.com",
+                className:"abc",
+                isPass:true,
+                myStyle:{color:'red',backgroundColor:'blue'}
+            }
+        })    
+    </script>
+</body>
+
+</html>

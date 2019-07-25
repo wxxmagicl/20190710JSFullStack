@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="./vue.js"></script>
+    <title>Document</title>
+    <style>
+        .abc{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- <ul>
+            <li v-for="(value,key,index) in stus">{{value}}</li>
+        </ul>
+        <p v-for="(value,key,index) in obj">{{value}}</p> -->
+        <!-- <p :class="{abc:key%2 == 0}" v-for="(value,key,index) in num">{{value}}</p> -->
+        
+        <!-- 把成绩以表格的形式展示出来 -->
+        <table border="1">
+            <tr>
+                <th>姓名</th>
+                <th v-for="(value,key,index) in subjects">{{value}}</th>
+            </tr>
+            <tr v-for="(value,key,index) in scores">
+                <td>{{value.name}}</td>
+                <td v-for="(s) in value.score">{{s}}</td>
+            </tr>
+            <!-- <tr>
+                <td>jack</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr> -->
+        </table>
+    </div>
+</body>
+<script>
+    let app = new Vue({
+        el:"#app",
+        data:{
+            stus:["z3","li","w5"],
+            obj:{name:"wangcai",age:100},
+            num:10,
+            subjects:["语文","数学","英文"],
+            scores:[
+                {name:"z3",score:[1,2,3]},
+                {name:"l3",score:[4,2,3]},
+                {name:"a3",score:[7,2,3]},
+                {name:"e3",score:[8,2,3]},
+            ]
+        }
+    })
+</script>
+</html>

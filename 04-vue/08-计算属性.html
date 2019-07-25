@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="./vue.js"></script>
+    <title>Document</title>
+    <style>
+        .abc{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>{{computedAge}}</h1>
+        <h1>{{computedAge}}</h1>
+        <h1>{{computedAge}}</h1>
+    </div>
+</body>
+<script>
+    let app = new Vue({
+        el:"#app",
+        data:{
+            age:38
+        },
+        methods: {
+            computedAge1:function(){
+                console.log("方法")
+                if(this.age>30){
+                    return "30而立"
+                }
+            }
+        },
+        computed: {
+            computedAge:function(){
+                console.log("计算属性")
+                if(this.age>30){
+                    return "30而立"
+                }
+            }
+        }
+    })
+</script>
+</html>
