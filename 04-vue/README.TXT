@@ -11,7 +11,14 @@ vue是一套构建用户界面的渐进式框架。
         v-model  ==> 实现双向数据绑定
     和属性相关的指令：
         v-bind  ==>  用于绑定html标签中的属性  v-bind:href="数据"   简写： :href = "数据"
-
+    条件指令：
+        v-if  控制一个元素是否显示
+        v-show   display:none  0,-1,""会自动转化成false  1会转成true  可以放表达式
+        v-if和v-show有区别？--->
+        v-if  v-else  指令之间不能有其它元素
+        v-else-if
+    循环指令：
+        v-for  遍历数组  <p v-for="(value,index) in links">{{value}}</p>
 
 双向数据绑定：
     MVVM：

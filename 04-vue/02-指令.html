@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <script src="./vue.js"></script>
+    <style>
+        .red{
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
@@ -15,6 +20,48 @@
         <!-- <a href="{{hrefname}}"></a> -->
         <a v-bind:href="hrefname">百度</a>
         <a :href="hrefname">百度</a>
+        <!-- <p v-show="isShow">这是一个p标签</p> -->
+
+        <!-- "hello" is not defined -->
+        <!-- <p v-show="hello">这是一个p标签</p> -->
+
+        <!-- <p v-show="0">这是一个p标签</p> -->
+        <!-- <p v-show="-0">这是一个p标签</p> -->
+        <!-- <p v-show="false">这是一个p标签</p> -->
+        <!-- <p v-show="">这是一个p标签</p> -->
+
+        <!-- <p v-show="2>1">这是一个p标签</p>
+        <p v-show="2>3">这是一个p标签</p> -->
+
+        <!-- <p v-if="isShow">这是一个p标签</p> -->
+        <!-- <p v-if="score>=60">及格</p>
+        <p v-else>不及格</p> -->
+
+        <!-- <p v-if="score>=90">A</p>
+        <p v-else-if="score>=80">B</p>
+        <p v-else-if="score>=70">C</p>
+        <p v-else>D</p> -->
+
+        <!-- <p v-for="(value,index) in links">{{c}}</p> -->
+
+        <!-- 对于数组来说，第三个参数没有作用 -->
+        <p v-for="(value,key,index) in links">
+            <!-- 第一个参数:{{value}}
+            第二个参数:{{key}}
+            第三个参数:{{index}} -->
+            {{value.name}} 连接：<a :href="value.link">{{value.name}}</a>
+        </p>
+
+        <!-- <p v-for="(value,key,index) in obj">
+                第一个参数:{{value}}
+                第二个参数:{{key}}
+                第三个参数:{{index}}
+        </p> -->
+        <p :class="red" v-for="(value,key,index) in num">
+                第一个参数:{{value}}
+                第二个参数:{{key}}
+                第三个参数:{{index}}
+        </p>
     </div>
     <script>
         var app = new Vue({
@@ -24,7 +71,20 @@
             data: {
                 msg:"hello world",
                 name:"<strong>Wangcai</strong>",
-                hrefname:"http://www.baidu.com"
+                hrefname:"http://www.baidu.com",
+                isShow:false,
+                score:90,
+                // links:["baidu","google","sina"]
+                links:[
+                    {name:"baidu",link:"http://www.baidu.com"},
+                    {name:"google",link:"http://www.google.com"},
+                    {name:"sina",link:"http://www.sina.com"},
+                ],
+                obj:{
+                    name:"wangcai",
+                    age:66
+                },
+                num:10
             }
         })    
     </script>
