@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- 使用组件 -->
+        <abc-def></abc-def>
+    </div>
+    <script>
+        // MyHeader这个名字是定义组件时的名字
+        let MyHeader = {
+            template:"<div>头部组件</div>"
+        }
+        var app = new Vue({
+            el:"#app",
+            // 注册组件
+            components: {
+                // AbcDef注册组件时的名字
+                "AbcDef":MyHeader
+            }
+        })    
+    </script>
+</body>
+</html>

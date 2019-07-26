@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div id="app">
+        我是父组件 我要使用父组件中的数据{{num}}
+        <hr>
+        <son :sonvalue="num" :sonname="name"></son>
+    </div>
+    <template id="son">
+        <div>
+            <h2>我是子组件---->{{sonvalue}}--->{{sonname}}</h2>
+            <button @click="sonvalue=200">修改数据为200</button>
+            <h3>{{myvalue}}</h3>
+            <button @click="myvalue=200">修改数据为200</button>
+        </div>
+    </template>
+</body>
+<script src="./vue.js"></script>
+<script>
+    let Son = {
+        template:"#son",
+        data(){
+            return{
+                myvalue:this.sonvalue
+            }
+        },
+        props:{
+            sonvalue:Number,
+            sonname:{
+                type:String,
+                // required:true,
+                default:"xiaoqiang"
+            }
+        },
+        methods: {
+            show(){
+                alert(this.sonvalue)
+            }
+        }
+    }
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            num:100,
+            name:"wangcai"
+        },
+        components: {
+            Son
+        }
+    })
+</script>
+</html>

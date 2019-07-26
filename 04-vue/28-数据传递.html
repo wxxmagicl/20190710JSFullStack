@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div id="app">
+        <h1>父组件</h1>
+        <son :sonnum="num"></son>
+    </div>
+    <template id="son">
+        <div>
+            <h3>子组件</h3>
+            <p>{{sonnum}}</p>
+        </div>
+    </template>
+</body>
+<script src="./vue.js"></script>
+<script>
+    let Son = {
+        template: "#son",
+        props:{
+            sonnum:{
+                type:Number
+            }
+        },
+        data() {
+            return{
+                
+            }
+        },
+        methods: {
+        }
+    }
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            num:100
+        },
+        components: {
+            Son
+        },
+        methods: {
+        }
+    })
+</script>
+
+</html>

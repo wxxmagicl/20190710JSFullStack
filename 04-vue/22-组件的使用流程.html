@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <abc></abc>
+    </div>
+    <script>
+        // 定义一个组件对象
+        let abc = {
+            template:"<div>我是一个小小的组件</div>"
+        }
+        var app = new Vue({
+            el:"#app",
+            // 注册组件
+            components: {
+                // aaa:abc,
+                abc,
+                "my-haed":{
+                    template:"<div>我是一个小小的组件</div>"
+                }
+            }
+        })    
+    </script>
+</body>
+</html>

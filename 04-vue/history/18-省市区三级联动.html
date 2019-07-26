@@ -26,28 +26,28 @@
     // console.log(cityInfo)
     let vm = new Vue({
         el: "#app",
-        data:{
-            city:cityInfo,
-            currentP:"-请选择-", // 当前用户选中的省
+        data: {
+            city: cityInfo,
+            currentP: "-请选择-", // 当前用户选中的省
             // currentC:"-请选择-", // 当前用户选中的市
         },
         computed: {
             // 得到所有的省
-            getP(){
-               let rs = this.city.map(item=>item.name)
-               rs.unshift("-请选择-")
-               return rs;
+            getP() {
+                let rs = this.city.map(item => item.name)
+                rs.unshift("-请选择-")
+                return rs;
             },
             // 得到所有的市
-            getC(){
+            getC() {
                 let result = []
                 // 你选择了哪个省，怎么得到
                 // console.log(this.currentP)
                 // 得到当前你选择的省的所有信息
-                let rs = this.city.find(item=>item.name == this.currentP)
+                let rs = this.city.find(item => item.name == this.currentP)
                 console.log(rs)
-                if(rs){
-                    result = rs.sub.map(item=>item.name)
+                if (rs) {
+                    result = rs.sub.map(item => item.name)
                     this.currentC = "请选择"
                 }
                 return result
@@ -55,5 +55,6 @@
         }
     })
 </script>
+
 
 </html>

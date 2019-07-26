@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app1">
+        <h1>{{msg}}</h1>
+        <my-head></my-head>
+    </div>
+    <div id="app2">
+        <my-head></my-head>
+    </div>
+    <script>
+        // 定义全局组件
+        Vue.component("my-head",{
+            template:"<div>我是一个头部</div>"
+        })
+        var app1 = new Vue({
+            el:"#app1",
+            data: {
+                msg:"hello"
+            },
+            methods: {
+            }
+        })    
+        var app2 = new Vue({
+            el:"#app2"
+        })
+    </script>
+</body>
+</html>
