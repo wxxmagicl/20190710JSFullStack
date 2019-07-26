@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <form action="">
+            <p><label for="">姓名</label><input type="text" value="wangcai" v-model="info.name"></p>
+            <p>
+                性别： <input v-model="info.sex" type="radio" value="男" name="sex" /> 男
+                <input v-model="info.sex" type="radio" value="女" name="sex" /> 女
+            </p>
+            <p><input type="checkbox" v-model="info.isagree"> 同意</p>
+            <p>
+                兴趣爱好1：
+                <input v-model="info.favoriate" type="checkbox" value="book" />看书
+                <input v-model="info.favoriate" type="checkbox" value="game" />游戏
+                <input v-model="info.favoriate" type="checkbox" value="sleep" />睡觉
+            </p>
+            <p>
+                兴趣爱好2：
+                <!-- 单标签上面是不能使用v-for的 -->
+                <!-- <input v-for="(value,key,index) in allfavoriate" type="checkbox">{{value}} -->
+
+                <!-- 多了一个无用的div -->
+                <!-- <div v-for="(value,key,index) in allfavoriate">
+                    <input type="checkbox">{{value}}
+                </div> -->
+
+                <!-- template是一个非常特殊的标签 -->
+                <template v-for="(item,key,index) in allfavoriate">
+                    <input type="checkbox" :value="item.name" >{{item.value}}
+                </template>
+            </p>
+            <p>
+                教育：
+                <select name="" id="" v-model="info.edu">
+                    <option value="-请选择-">-请选择-</option>
+                    <option v-for="item in eduOption" :value="item">{{item}}</option>
+                </select>
+            </p>
+        </form>
+        <hr>
+        <p>你的信息是：</p>
+        {{info}}
+    </div>
+</body>
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            allfavoriate: [
+                {
+                    "name":"book",
+                    "value":"看书"
+                },
+                {
+                    "name":"travel",
+                    "value":"旅行"
+                },
+                {
+                    "name":"sleep",
+                    "value":"睡觉"
+                },
+                {
+                    "name":"study",
+                    "value":"学习"
+                },
+            ],
+            eduOption:["重点","一本","二本","三本"],
+            info: {
+                name: "",
+                sex: "男",
+                isagree: false,
+                favoriate: ["book"],
+                edu:"-请选择-"
+            }
+        }
+    })
+</script>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="./vue.js"></script>
+    <title>Document</title>
+    <style>
+        .father{
+            width: 200px;
+            height: 200px;
+            border: 3px solid red;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            border: 3px solid green;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+       <div class="father" @click="f1">
+           <div class="son" @click="f2($event)"></div>
+       </div>
+    </div>
+</body>
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            isShow:true
+        },
+        methods: {
+            f1(){
+                console.log("父.....")
+            },
+            f2(a){
+                a.stopPropagation()
+                console.log("子.....")
+            }
+        }
+    })
+</script>
+
+</html>

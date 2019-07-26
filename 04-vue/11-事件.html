@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="./vue.js"></script>
+    <title>Document</title>
+    <style>
+        .plane{
+            width: 400px;
+            /* height: 400px; */
+            border: 2px solid red;
+        }
+        .plane h1{
+            background-color: skyblue;
+            height: 40px;
+        }
+        .plane h1 span{
+            float: right;
+            font-size: 12px;
+            color: red;
+            height: 40px;
+            line-height: 40px;
+            margin-right: 10px;
+        }
+        .plane content{
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- button叫事件源 -->
+        <!-- click叫事件类型 -->
+        <!-- f1叫监听器 -->
+        <button id="btn" v-on:click="f1">注册</button>
+
+        <div class="plane">
+            <!-- <h1>标题<span v-on:click="isShow = !isShow">{{isShow ? "收起":"展开"}}</span></h1> -->
+            <h1>标题<span v-on:click="f2">{{isShow ? "收起":"展开"}}</span></h1>
+            <div class="content" v-show="isShow">
+                <p>内容</p>
+                <p>内容</p>
+                <p>内容</p>
+                <p>内容</p>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            isShow:true
+        },
+        methods: {
+            f1() {
+                alert("注册成功了...")
+            },
+            f2(){
+                this.isShow = !this.isShow
+            }
+        }
+    })
+    // document.getElementById("btn").onclick = function(){
+    //     alert("原始的点击事件1")
+    // }
+    // document.getElementById("btn").addEventListener("click",function(){
+    //     alert("原始的点击事件2")
+    // })
+</script>
+
+</html>

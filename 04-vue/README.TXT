@@ -79,4 +79,92 @@ vue是一套构建用户界面的渐进式框架。
     }
     还有一些第三方的过程器
 
+------ 网页的渲染原理 diff 虚拟dom(对象)
 
+vue:
+    特征1：指令系统
+    特征2：组件化  
+    特征3：模块化
+    特征4：工程化
+    特征5：全栈化
+
+React，Angular:
+    React: 中
+    Angular: 高
+
+------------ vue实例的配置项：
+    el:必选的   vue实例管理的边界
+    data: 数据模型 
+    methods:方法 
+    computed:计算属性
+    filters:过滤器 
+    components:组件 
+    勾子函数：vue的生命周期函数（不需要我们自己调用，要合适的时机，vue会自动调用）
+    ...
+
+---------------- 指令： 
+v-text  {{}}
+v-html 
+v-model 
+v-bind  :   class   style
+v-if  v-else   v-else-if   v-show  
+v-for 
+
+---------------- 函数：
+方法： f1()
+计算属性： d 
+过滤器： d | f1 
+
+------------------------- 事件模型
+事件三要素：事件源，事件类型，监听器  btn.onclick = function(){}
+v-on: 处理事件
+
+事件类型：
+    鼠标事件：click,dblclick,mouseover,mouseout,mouseenter,mouseleave,mousedown,mousemove,mouseup
+    键盘事件：keydown,keyup,keypress
+    UI事件：scroll,resize,load,unload
+    焦点事件：focus, blur
+    表单事件：change,submit
+
+事件处理函数：  
+    把事件处理函数写在标签中  <span v-on:click="isShow = !isShow">{{isShow ? "收起":"展开"}}</span>
+    把事件处理函数写在methods中  常规写法
+    传字面量：v-on:click="f1('world')"
+    传变量  <button v-for="(value,key,index) in 3" v-on:click="f2(value)">按钮{{value}}</button>
+
+事件对象：
+    当事件发生时，事件对象中保存了很多信息，如点击的坐标。
+    $event 固定的名字   
+    阻止默认事件：
+        <a href="http://www.baidu.com">百度</a>  a标签有的所谓的默认事件
+    阻止事件冒泡：
+        事件默认情况下会传播，可以从里向外传播，也可以从外向里传播。
+        如果是从里向外传播--->事件冒泡机制
+
+事件修饰符：
+    之前阻止默认事件的写法：
+        e.preventDefaut()  
+        <a href="javascript:void(0)"></a>
+    vue中通过修饰符的写法：
+        @click.prevent="f1"
+    
+常用的修饰符：
+    stop 阻止冒泡 
+    prevent 阻止默认事件
+    capture 冒泡改为捕获 
+    self 只处理发生在自己身上的事件，不理会冒泡或捕获
+        把self放到谁的身上，谁就不会触发
+    once 只执行一次
+
+按键修饰符：
+    keyCode
+
+------------------------ 表单处理 
+    绑定普通文本框
+    绑定单选框
+        name="sex"
+        v-model=""
+    绑定一个复选框
+    绑定多个复选框
+    绑定下拉菜单
+    省市区三级联动

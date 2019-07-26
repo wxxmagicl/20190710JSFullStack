@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="./vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- $event就是事件对象 -->
+        <button v-on:click="f1($event,'hello')">注册</button>
+        <a href="http://www.baidu.com" v-on:click="f2($event)">百度</a>
+    </div>
+</body>
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            isShow:true
+        },
+        methods: {
+            f1(abc,def){
+                console.log(abc)
+                console.log(def)
+            },
+            f2(abc){
+                console.log(abc)
+                abc.preventDefault()
+            }
+        }
+    })
+</script>
+
+</html>

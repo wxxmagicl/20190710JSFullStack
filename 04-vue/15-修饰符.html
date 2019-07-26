@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="./vue.js"></script>
+    <title>Document</title>
+    <style>
+        .father{
+            border: 1px solid red;
+            width: 200px;
+            height: 200px;
+            background-color:pink;
+        }
+        button{
+            display: block;
+            margin: 0 auto;
+            margin-top:30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <a href="http://www.baidu.com" @click.prevent="f1">点击</a>
+        <!-- 把self放到了father上面，点击子元素，父元素的事件不被触发 -->
+        <!-- <div class="father" @click.self="divClick"> -->
+
+        <!-- capture 把冒泡改变捕获，这个capture父子中都要写 -->
+        <!-- <div class="father" @click.capture="divClick"> -->
+        <div class="father" @click.self="divClick">
+            <!-- 事件默认会传播，冒泡型 -->
+            <!-- <button @click="btnClick">点击</button> -->
+
+            <!-- 阻止事件冒泡 -->
+            <!-- <button @click.stop="btnClick">点击</button> -->
+            
+            <!-- 冒泡改为捕获 -->
+            <!-- <button @click.capture="btnClick">点击</button> -->
+
+            <!-- 只处理发生在自己身上的事件，不理会冒泡或捕获 -->
+            <!-- <button @click="btnClick">点击</button> -->
+
+            <!-- 只执行一次 -->
+            <!-- <button @click.once="btnClick">点击</button> -->
+
+            <!-- 同时使用多个事件修饰符 -->
+            <button @click.stop.once="btnClick">点击</button>
+        </div>
+    </div>
+</body>
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            isShow:true
+        },
+        methods: {
+            f1(){
+                console.log("aaa")
+            },
+            divClick(){
+                console.log("div被点击了")
+            },
+            btnClick(){
+                console.log("btn被点击了")
+            }
+        }
+    })
+</script>
+
+</html>

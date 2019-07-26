@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="./vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <p>实现回车录入：</p>
+        <input type="text" @keyup="f($event)">
+        <!-- <input type="text" @keyup.13="f1"> -->
+        <!-- <input type="text" @keyup.enter="f1"> -->
+        <!-- <input type="text" @keyup.tab="f1">
+        <input type="text" @keyup.delete="f1">
+        <input type="text" @keyup.esc="f1">
+        <input type="text" @keyup.space="f1">
+        <input type="text" @keyup.up="f1">
+        <input type="text" @keyup.down="f1">
+        <input type="text" @keyup.left="f1">
+        <input type="text" @keyup.right="f1">
+        <input type="text" @keyup.shift.enter="f1">
+        <input type="text" @keyup.alt="f1">
+        <input type="text" @keyup.shift="f1"> -->
+    </div>
+</body>
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data: {
+        },
+        methods: {
+            f(e) {
+                if (e.keyCode == 13) {
+                    alert("录入成功")
+                }
+            },
+            f1(){
+                alert("录入成功")
+            }
+        }
+    })
+</script>
+
+</html>
