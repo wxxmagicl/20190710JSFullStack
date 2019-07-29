@@ -222,7 +222,43 @@ vue-devtools: 所有都要装
         在父组件模板中，给子组件添加一个事件监听
         在子组件中，某个时间通过this.$emit发出这个事件，发出事件的同时就可以携带数据
         当父中的方法触发，数据作用这个方法的第一个参数
+    
+------------------ vue中的脚手架 
+脚手架：快速搭建项目的结构 
+单文件组件：一个文件就是一个组件
 
+要使用npm，那么你电脑上需要安装node.js。查看电脑上有没有安装过Node，如下：
+node -v   
+    v10.16.0  表示node安装成功了
+
+如果node安装成功，它会自动安装一个工具，叫npm，它是用来下载第三方模块的
+npm -v 
+    6.9.0   表示npm也安装成功了
+
+通过npm i xxx,默认是从国外的服务器下载第三方模块的，会导致下载非常慢，切换下载源
+npm i nrm -g   表示安装一个nrm的模块   安装完后，可以使用nrm这个命令了
+nrm ls  查看当前有哪些下载源
+  npm -------- https://registry.npmjs.org/
+  yarn ------- https://registry.yarnpkg.com/
+  cnpm ------- http://r.cnpmjs.org/
+* taobao ----- https://registry.npm.taobao.org/
+  nj --------- https://registry.nodejitsu.com/
+  npmMirror -- https://skimdb.npmjs.com/registry/
+  edunpm ----- http://registry.enpmjs.org/
+
+切换下载源：
+nrm use taoba  把下载源切换到国内的taobao
+
+
+安装脚手架工具：
+    npm install -g @vue/cli  全局安装脚手架工具
+
+查看脚手架有没有安装成功：
+    vue --version
+       3.8.4   表示脚手架也安装成功了
+
+创建项目：
+    vue create demo  创建项目
 
 
 
