@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+    <script src="./vuex.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>我是根组件，当前counter的值是:{{this.$store.state.counter}}</p>
+        <br>
+        <add-counter></add-counter>
+        <br>
+        <sub-counter></sub-counter>
+    </div>
+    <template id="addcounter">
+        <div>
+            <p>我是addcounter子组件</p>
+            <p>当前counter的值：{{this.$store.state.counter}}</p>
+            <button @click="addone">加1</button>
+        </div>
+    </template>
+    <template id="subcounter">
+        <div>
+            <p>我是subcounter子组件</p>
+            <p>当前counter的值：{{this.$store.state.counter}}</p>
+            <button @click="subone">减1</button>
+        </div>
+    </template>
+    <script>
+        // console.log(Vuex)    // 创建一个仓库 
+        let store = new Vuex.Store({
+            state: {
+                counter: 1
+            },
+            mutations: {  // 要修改state中的数据，你只能通过mutaions中的方法
+                add(state) {
+                    state.counter++;
+                },
+                sub(state) {
+                    state.counter--;
+                }
+            }
+        })
+
+        const AddCounter = {
+            template: "#addcounter",
+            methods: {
+                addone() {
+                    this.$store.state.counter++;
+                }
+            }
+        }
+        const SubCounter = {
+            template: "#subcounter",
+            methods: {
+                subone() {
+                    this.$store.commit("sub")
+                }
+            }
+        }
+        // 把仓库注入到Vue实例 
+        let vm = new Vue({
+            el: "#app",
+            data: {},
+            store,
+            components: {
+                AddCounter,
+                SubCounter
+            }
+        })
+    </script>
+</body>
+
+</html>
