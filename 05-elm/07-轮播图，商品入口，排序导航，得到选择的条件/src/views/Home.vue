@@ -66,7 +66,7 @@ export default {
         this.entries = res.data.entries;
       });
       this.$axios("/api/profile/filter").then(res => {
-        console.log(res.data)
+        // console.log(res.data)
         this.filterData = res.data;
       });
     },
