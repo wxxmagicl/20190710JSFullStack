@@ -19,7 +19,7 @@
       <!-- 轮播图 -->
       <mt-swipe :auto="4000" class="swiper">
         <mt-swipe-item v-for="(img,index) in swipeImgs" :key="index">
-          <img :src="img" alt />
+          <img :src="img" alt="">
         </mt-swipe-item>
       </mt-swipe>
       <!-- 商品分类入口 -->
@@ -27,7 +27,7 @@
         <mt-swipe-item v-for="(entry,i) in entries" :key="i">
           <div class="foodentry" v-for="(item,index) in entry" :key="index">
             <div class="img_wrap">
-              <img :src="item.image" alt />
+              <img :src="item.image" alt="">
             </div>
             <span>{{item.name}}</span>
           </div>
@@ -39,39 +39,27 @@
     <!-- 导航 -->
     <FilterView :filterData="filterData" @searchFixed="showFilterView" @update="update"></FilterView>
     <!-- 商家信息 -->
-    <mt-loadmore
-      :top-method="loadData"
-      :bottom-method="loadMore"
-      :bottom-all-loaded="allLoaded"
-      :auto-fill="false"
-      :bottomPullText="bottomPullText"
-      ref="loadmore"
-    >
-      <div class="shoplist">
-        <IndexShop v-for="(item,index) in restaurants" :key="index" :restaurant="item.restaurant" />
-      </div>
-    </mt-loadmore>
+    <div class="shoplist">
+      <IndexShop v-for="(item,index) in restaurants" :key="index" :restaurant="item.restaurant"></IndexShop>
+    </div>
   </div>
 </template>
 
 <script>
-import { Swipe, SwipeItem, Loadmore } from "mint-ui";
-import FilterView from "../components/FilterView";
-import IndexShop from "../components/IndexShop";
+import { Swipe, SwipeItem } from "mint-ui";
+import FilterView from "../components/FilterView"
+import IndexShop from "../components/IndexShop"
 export default {
   name: "home",
   data() {
     return {
-      swipeImgs: [], // 轮播图的数据
-      entries: [], // 商品入口的数据
-      filterData: null, // 包含了排序导航中的数据
-      showFilter: false,
-      page: 1, // 第几页
-      size: 5, // 每页显示多个条数据
+      swipeImgs: [],  // 轮播图的数据
+      entries:[],  // 商品入口的数据
+      filterData:null,  // 包含了排序导航中的数据
+      showFilter:false,
+      page: 1,  // 第几页
+      size: 5,  // 每页显示多个条数据
       restaurants: [], // 存放所有商家容器
-      allLoaded: false,
-      bottomPullText: "上拉加载更多",
-      data: null
     };
   },
   created() {
@@ -92,54 +80,17 @@ export default {
       this.loadData();
     },
     // 加载商家数据
-    loadData() {
-      this.page = 1;
-      this.allLoaded = false;
-      this.bottomPullText = "上拉加载更多";
-      // 拉取商家信息
-      this.$axios
-        .post(`/api/profile/restaurants/${this.page}/${this.size}`, this.data)
-        .then(res => {
-          // console.log(res.data);
-          this.$refs.loadmore.onTopLoaded();
-          this.restaurants = res.data;
-        });
+    loadData(){
+      this.$axios.post(`/api/profile/restaurants/${this.page}/${this.size}`).then(res=>{
+        // console.log(res.data)
+        this.restaurants = res.data
+      })
     },
-    // 加载更多
-    loadMore() {
-      if (!this.allLoaded) {
-        this.page++;
-        // 拉取商家信息
-        this.$axios
-          .post(`/api/profile/restaurants/${this.page}/${this.size}`)
-          .then(res => {
-            //  加载完之后重新渲染
-            this.$refs.loadmore.onBottomLoaded();
-            if (res.data.length > 0) {
-              res.data.forEach(item => {
-                this.restaurants.push(item);
-              });
-              // if (res.data < this.size) {
-              //   this.allLoaded = true;
-              //   this.bottomPullText = "没有更多了哦";
-              // }
-            } else {
-              // 数据为空
-              this.allLoaded = true;
-              this.bottomPullText = "没有更多了哦";
-            }
-          });
-      }
+    showFilterView(isShow){
+      this.showFilter = isShow
     },
-    // 下拉刷新
-    loadTop(){},
-    showFilterView(isShow) {
-      this.showFilter = isShow;
-    },
-    update(codation) {
-      // console.log(codation);
-      this.data = codation;
-      this.loadData();
+    update(codation){
+      console.log(codation)
     }
   },
   computed: {
@@ -153,7 +104,7 @@ export default {
       );
     }
   },
-  components: {
+  components:{
     FilterView,
     IndexShop
   }
