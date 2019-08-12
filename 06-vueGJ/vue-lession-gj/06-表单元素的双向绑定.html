@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- key尽量不要绑定index，如果有id尽量绑定id -->
+        <!-- select默认绑定的是option与option中间的内部，如果有value，那么它绑定就是value中的内容 -->
+        <!-- 在对表单进行绑定时，value不能省 -->
+        <select v-model="selectValue">
+            <option :value="0" >请选择</option>
+            <option  v-for="item in lists" :value="item.id" :key="item.id">{{item.value}}</option>
+        </select>
+        {{selectValue}}
+        <hr>
+        男: <input v-model="radioValue" value="男" type="radio" name="sex">
+        女: <input v-model="radioValue" value="女" type="radio" name="sex">
+        <br>
+        {{radioValue}}
+        <hr>
+        全选：<input v-model="checkboxValue" type="checkbox">
+        <br>
+        {{checkboxValue}}
+        <hr>
+        游戏：<input v-model="checksValue" type="checkbox" value="游戏">
+        健身：<input v-model="checksValue" type="checkbox" value="健身">
+        <br>
+        {{checksValue}}
+        <hr>
+    </div>
+</body>
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            selectValue:[],
+            lists:[{value:"菜单1",id:1},{value:"菜单2",id:2}],
+            radioValue:"男",
+            checkboxValue:true,
+            checksValue:[],
+            a:{
+                
+            }
+        },
+        methods: {
+            
+        }
+    })
+</script>
+
+</html>

@@ -51,9 +51,30 @@ const router = new Router({
           component: ()=>import("./views/Shop/Seller.vue"),
         }
       ]
+    },
+    {
+      path: '/myAddress',
+      name: 'myAddress',
+      component: () => import('./views/Orders/MyAddress.vue')
+    },
+    {
+      path: '/addAddress',
+      name: 'addAddress',
+      component: () => import('./views/Orders/AddAddress.vue')
     }
   ]
 })
+
+
+
+
+
+
+
+
+
+
+
 // 路由守卫
 // router.beforeEach((to, from, next) => {
 //   const isLogin = localStorage.ele_login ? true : false;

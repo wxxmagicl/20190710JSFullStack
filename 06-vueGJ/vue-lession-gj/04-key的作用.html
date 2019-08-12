@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<!-- key是用来区分元素的 -->
+<body>
+    <div id="app">
+        <div v-if="flag">
+            <span>wangcai</span>
+            <input type="text" key="1">
+        </div>
+        <div v-else>
+            <span>xiaoqiang</span>
+            <input type="text" key="2">
+        </div>
+    </div>
+</body>
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            flag:true
+        }
+    })
+</script>
+
+</html>

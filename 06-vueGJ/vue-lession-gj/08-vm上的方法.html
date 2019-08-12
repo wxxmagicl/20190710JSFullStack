@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div>
+            {{info}}
+        </div>
+    </div>
+</body>
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            info:{xx:"xxx"}
+        },
+    })
+    vm.$watch("info.xx",function(newValue,oldValue){
+        console.log(newValue,oldValue) //yyy xxx
+    })
+
+    // // 数据驱动视图是批量操作
+    // vm.arr = [6,6,6]
+    // vm.arr = [8,8,8]
+    // // 现在去获取视图上面的数据，还是老的数据
+    // // console.log(vm.$el.innerHTML)
+    // // 当视图中的数据批量更新后，它会自动调用这个方法
+    // vm.$nextTick(()=>{
+    //     console.log(vm.$el.innerHTML)
+    // })
+
+
+
+    // console.log(vm.$el)
+    // console.log(vm.$el.innerHTML)
+    // console.log(vm.$options) // 打印出vm上面的所有的挂载项
+</script>
+<!-- 
+    $el   $nextTick   $options   $watch
+ -->
+</html>

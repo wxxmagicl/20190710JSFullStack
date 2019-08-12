@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <!-- 
+        计算属性有缓存，如果计算属性所依赖的数据没有必变，它会去缓存中取
+        方法是没有缓存，每一次拿数据，都会调用这个方法
+        watch 第1次没没有触发  需要配合mounted钩子
+     -->
+    <div id="app">
+        {{fullName}}
+    </div>
+</body>
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            firstName:"张",
+            lastName:"三",
+            fullName:""
+        },
+        mounted(){
+            this.getFullName();
+        },
+        methods: {
+            getFullName(){
+                this.fullName = this.firstName + this.lastName
+            }
+        },
+        // computed: {
+        //     fullName(){
+        //         return this.firstName + this.lastName
+        //     }
+        // },
+        watch: {
+            firstName(){
+                setTimeout(()=>{
+                    this.getFullName()
+                },10000)
+            },
+            lastName(){
+                this.getFullName()
+            }
+        }
+    })
+
+</script>
+<!-- 
+    计算属性和方法的区别？
+    computed有缓存   method没有缓存
+
+    computed和watch有什么区别？
+    大多数情况下，computed和watch都可以互换，
+    watch中可以写异步，
+    watch中的写法复杂一点，
+    watch可以实现一些简单的功能
+
+    watch和方法有区别？
+    watch主要是用来监控数据变化
+    方法里面就是写一些常规的方法
+
+    能使用computed就不要使用watch 
+ -->
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <!-- 在模板中，this表示vm实例 -->
+    <!-- v-html,v-if,v-show,v-for -->
+    <!-- v-html: 会解析html标签，xss攻击-->
+    <!-- 
+        v-if v-show 
+        v-if控制dom元素有还是没有  支持template标签
+        v-show控制是css样式  不支持template标签
+    -->
+    <!-- 
+        v-for 循环数组 循环对象 整数
+        vue2.5版本以上，要使用v-for，需要加上key  key要唯一
+        template上面是不能绑定key
+        key的作用：区分元素
+    ---> 
+    <div id="app">
+        <template v-for="i in 3">
+            <!-- Key一定要唯一 -->
+            <div :key="i+'_1'">{{i}}</div>
+            <div :key=`${i}_2`>{{i}}</div>
+        </template>
+
+        <!-- <template v-for="i in 5" :key="i">
+            <p>{{i}}</p>
+        </template> -->
+        <!-- <template v-show="flag">
+            true
+        </template> -->
+        <!-- <div v-show="flag">
+            show
+        </div> -->
+        <!-- <div v-if="flag">
+            true
+        </div>
+        <div v-else>
+            false
+        </div> -->
+    </div>
+</body>
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "hello",
+            flag: false
+        }
+    })
+</script>
+
+</html>

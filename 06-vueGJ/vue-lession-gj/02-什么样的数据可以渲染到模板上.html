@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- 要在视图中使用数据，数据务必放到data中 -->
+        <!-- {{ info.xxx }}
+        {{ info.address }} -->
+        {{ arr }}
+    </div>
+</body>
+<script>
+    // vue是数据驱动视图的
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            // xxx肯定是可以监控到的
+            // info:{xxx:"xxxxx"},
+            arr:[1,2,3]
+        }
+    })
+    vm.arr = [6,6,6]
+
+    // vue的实例会代理data中的数据
+    // vm.info.xxx = "hello" // 这数据写在外面，在{{}}中是得不到数据
+    // vm.info.address = "mmmmmmmmm"'
+    // vm.info = {address:"hello",xx:"xx"}
+    // vm.info.address = "world"
+
+    // vm.$set(vm.info,"address","abc")
+
+</script>
+</html>
