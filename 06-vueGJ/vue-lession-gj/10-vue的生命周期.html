@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>h1</h1>
+        {{ a }}
+    </div>
+    <!-- 学习vue的生命周期就是学习一堆的钩子函数 -->
+</body>
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data:{
+            a:1
+        },
+        // 初始化生命周期，并且绑定自己的事件
+        beforeCreate () {  // 用的比较少   拿不到数据  
+            console.log("beforeCreate")
+        },
+        // 用的比较多 发起ajax  ajax是异步  不会中断
+        // created就可以获取数据data中的数据了
+        created(){
+            console.log("created")
+            // console.log(this.a)
+        },
+        // 很少用  第一次调用渲染函数之前 也可以发送ajax请求  一般不会在这里发
+        beforeMount () {
+            console.log("beforeMount")
+        },
+        // 用的比较多  发起ajax  当页面渲染完成后  获取真实dom
+        mounted () {
+            console.log("mounted")
+            console.log(this.$el.innerHTML)
+            this.timer = setInterval(()=>{
+
+            })
+        },
+        // 基本也不使用
+        beforeUpdate () {
+            this.a = 666;
+            console.log("beforeUpdate")
+        },
+        updated () {  // 也会使到  不能要updata钩子中操作数据  可能导致死循环
+            // this.a = 888;
+            console.log("updated")
+        },
+        beforeDestroy () {
+            console.log("销毁之前")
+            // 销毁之前做一些清理工作
+            clearInterval(this.timer)
+        },
+        destroyed () {
+            console.log("真正销毁了...")
+        }
+    })
+    vm.$destroy();
+</script>
+</html>

@@ -6,7 +6,16 @@
 命令式：for 循环  for(let i = 0; i<=10; i++){}
 声明式：reducer  map  some  every   map(item=>{})  v-if  
 
-
+组件之间通信（传值，交互）：
+    props 
+    $emit()
+    $attrs
+    $listeners
+    $parent  $children
+    provide   inject
+    $refs
+    事件总线
+    vuex
 
 
 

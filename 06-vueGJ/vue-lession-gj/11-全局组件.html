@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <!-- 
+        组件：方便协作开发，方便维护，复用（数据都是从外面传递进来的）
+     -->
+    <div id="app1">
+        <my-button></my-button>
+        <my-button></my-button>
+        <my-button></my-button>
+    </div>
+    <div id="app2">
+        <my-button></my-button>
+        <my-button></my-button>
+        <my-button></my-button>
+    </div>
+</body>
+<script>
+    // Vue.component 全局注册组件
+    Vue.component('my-button', {
+        data() {
+            return {
+                msg: "哈喽"
+            }
+        },
+        template: `<button>{{msg}}</button>`
+    })
+    let vm1 = new Vue({
+        el: "#app1",
+    })
+    let vm2 = new Vue({
+        el: "#app2",
+    })
+</script>
+
+</html>

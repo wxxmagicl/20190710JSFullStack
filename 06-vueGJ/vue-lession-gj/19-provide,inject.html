@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <my></my>
+    </div>
+</body>
+<script>
+    Vue.component("my",{
+        inject:['a'],
+        template:"<div>{{a}}</div>"
+    })
+    let vm = new Vue({
+        el: "#app",
+        provide:{
+            a:1
+        }
+    })
+</script>
+</html>

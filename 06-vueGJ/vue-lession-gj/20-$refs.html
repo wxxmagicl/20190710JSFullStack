@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <my ref="com"></my>
+    </div>
+</body>
+<script>
+    let vm = new Vue({
+        el: "#app",
+        mounted () {
+          console.log(this.$refs.com.show())  
+        },
+        components: {
+            "my":{
+                methods: {
+                    show(){
+                        alert(1)
+                    }
+                },
+                template:`<div>my</div>`
+            }
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="./vue.js"></script>
+    <style>
+        .title{
+            width: 100px;
+            border: 1px solid red;
+            line-height: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <collapse>
+            <collapse-item title="vue">内容1</collapse-item>
+            <collapse-item title="react">内容2</collapse-item>
+            <collapse-item title="node">内容3</collapse-item>
+        </collapse>
+    </div>
+</body>
+<script>
+    // $parent 获取父组件的实例   $children获取所有的儿子
+    Vue.component("Collapse",{
+        methods:{
+            cut(childId){  
+                this.$children.forEach(child=>{
+                    if(child._uid !== childId){
+                        // 不是当前点击的
+                        child.show = false;
+                    }
+                })
+            }
+        },
+        template:`<div class="wrap">
+            <slot></slot>
+        </div>`
+    });
+    Vue.component("CollapseItem",{
+        data(){return{ show:false }},
+        props: ['title'],
+        methods: {
+            change(){
+                this.$parent.cut(this._uid)
+                this.show = !this.show;
+            }
+        },
+        template:`<div>
+            <div class="title" @click="change">{{title}}</div>
+            <div v-show="show">
+                <slot></slot>
+            </div>
+        </div>`
+    })
+    let vm = new Vue({
+        el: "#app",
+    })
+</script>
+</html>

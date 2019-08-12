@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <my-button :msg="content"></my-button>
+    </div>
+</body>
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data:{
+            content:"点我"
+        },
+        components: {
+            "MyButton":{
+                data(){
+                    return{
+                    }
+                },
+                props:{
+                    msg:String  // 属性校验
+                },
+                template:`<div>子组件---{{msg}}--- <my></my></div>`,
+                components:{
+                    'my':{
+                        template:`<span>孙组件</span>`
+                    }
+                }
+            }
+        }
+    })
+</script>
+
+</html>

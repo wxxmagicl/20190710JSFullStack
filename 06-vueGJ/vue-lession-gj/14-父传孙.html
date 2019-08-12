@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <my-button :msg="content" a="1" b="2"></my-button>
+    </div>
+</body>
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data:{
+            content:"点我"
+        },
+        components: {
+            "MyButton":{
+                mounted(){
+                    // this.$attrs 如果子接收的数据没有用到，把数据保存在$attrs中
+                    console.log(this.$attrs)
+                },
+                template:`<div>子组件<my  v-bind="$attrs"></my></div>`,
+                components:{
+                    'my':{
+                        props: ['a','b'],
+                        template:`<span>孙组件{{a}}----{{b}}</span>`
+                    }
+                }
+            }
+        }
+    })
+</script>
+
+</html>

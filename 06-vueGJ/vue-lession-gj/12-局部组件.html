@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <my-button></my-button>
+        <my-button />
+    </div>
+</body>
+<script>
+    let vm = new Vue({
+        el: "#app",
+        components: {
+            "MyButton":{
+                data(){
+                    return{
+                        msg:"哈喽~"
+                    }
+                },
+                template:`<button>{{msg}}</button>`
+            }
+        }
+    })
+</script>
+
+</html>

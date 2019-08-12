@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <!-- 
+        子要触发父中的方法：
+            方式一：@click.native="change"
+            方式二：@click="$listeners.click()"
+            方式三：@click="$emit('click')"
+            触发父传递的多个事件：v-on="$listeners"
+
+     -->
+    <!-- 父把一个事件传递给子  子要触发这个事件 -->
+    <!-- 
+        如果父传递了数据  子通过props接收
+        如果父传递了事件  子通过$emit触发
+     -->
+    <div id="app">
+        <!-- my-button组件  v-on:click="" 属性    -->
+        <!-- <my-button @click="change" a="1"></my-button> -->
+
+        <!-- 方式一 @click.native 把click当成一个正二八经的事件，让子来触发这个事件 -->
+        <!-- <my-button @click.native="change" a="1"></my-button> -->
+        <!-- <my-button @click.native="change" a="1"></my-button> -->
+
+        <!-- 方式二：所有v-on绑定的事件都会放到$listeners -->
+        <!-- <my-button @click="change"></my-button> -->
+
+        <!-- 方式三：$emit() -->
+        <my-button @click="change" @mouseup="change"></my-button>
+    </div>
+</body>
+<script>
+    let vm = new Vue({
+        el: "#app",
+        methods: {
+            change(){
+                alert(1)
+            }
+        },
+        components: {
+            "MyButton":{
+                // template:`<div><button @click="$listeners.click()">点我</button></div>`
+                // template:`<div><button @click="$emit('click')">点我</button></div>`
+                template:`<div><button v-on="$listeners">点我</button></div>`
+            }
+        }
+    })
+</script>
+</html>
