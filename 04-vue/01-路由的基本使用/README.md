@@ -15,7 +15,7 @@ vue-cli
 
 路由的基本使用：
     1，创建我们需要的组件
-    2，在router.js中设置匹配规则
+    2，在router文件夹下面的index.js中设置匹配规则
     3，在App.vue中使用router-view用来放路由匹配的组件
 
 在vue-cli中有两个地方可以放组件，一个是components，一个是views。如果一个组件是页面级的组件放到views，如果一个组件是通用级别的组件，放到components。
